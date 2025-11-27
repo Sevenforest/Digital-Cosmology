@@ -1,7 +1,7 @@
 # Digital Cosmology: The "Time Non-Realism" Protocol
 ### 宇宙という巨大な計算機システムの「仕様書」と実証コード
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17732300.svg)](https://doi.org/10.5281/zenodo.17732300)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17733249.svg)](https://doi.org/10.5281/zenodo.17733249)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌌 Overview (概要)
