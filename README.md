@@ -4,6 +4,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17733249.svg)](https://doi.org/10.5281/zenodo.17733249)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[**🇯🇵 Japanese (Original)**](README.md) | [**🇺🇸 English**](README_en.md)
+
 ## 🌌 Overview (概要)
 
 本リポジトリは、物理学における未解決問題（時間の問題、量子重力理論の統合、観測問題）に対し、**「宇宙＝離散的な状態遷移システム（Digital State Machine）」** というエンジニアリング的視点から導き出された大統一理論のドキュメントおよび実証コードを公開するものである。
