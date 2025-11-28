@@ -8,7 +8,7 @@
 
 ## 🌌 Overview
 
-This repository hosts the documentation and empirical code for a Grand Unified Theory derived from an engineering perspective: **"The Universe as a Discrete State Machine."**
+This repository hosts the documentation and empirical code for a **Digital Theory of Everything** derived from an engineering perspective: **"The Universe as a Discrete State Machine."**
 This theory addresses unsolved problems in physics (the Problem of Time, unification of Quantum Gravity, the Measurement Problem).
 
 By denying the existence of "continuous spacetime" and "real wave functions" assumed in standard physics, and redefining them as **"processes of computational resource optimization,"** this theory logically resolves the paradoxes between General Relativity and Quantum Mechanics.
@@ -61,9 +61,3 @@ The future does not change the past. Instead, the "observation result" functions
 
 This project is licensed under the MIT License.
 **When citing, please include a link to this repository or the issued DOI.**
-
-
-
-
-
-
