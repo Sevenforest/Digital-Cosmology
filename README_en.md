@@ -1,7 +1,7 @@
 # Digital Cosmology: The "Time Non-Realism" Protocol
 ### Specifications and Verification Code for the Universe as a Giant Computing System
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17750746.svg)](https://doi.org/10.5281/zenodo.17750746)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17756456.svg)](https://doi.org/10.5281/zenodo.17756456)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [**🇯🇵 Japanese (Original)**](README.md) | [**🇺🇸 English**](README_en.md)
