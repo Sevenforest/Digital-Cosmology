@@ -38,10 +38,13 @@
 
 | File | Description |
 |:---|:---|
-| `Vol1_Time_Non_Realism.pdf` | **基礎編:** エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
-| `Vol2_Digital_Cosmology.pdf` | **核心編:** 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
-| `Appendix_SourceCode.pdf` | **技術補遺:** 理論の数学的記述とPython実装のソースコード。 |
+| `Vol1_Time_Non_Realism.md` | **基礎編:** エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
+| `Vol2_Digital_Cosmology.md` | **核心編:** 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
+| `Vol3_System_Architecture.md` | **システム編:** ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
+| `Appendix_SourceCode.md` | **技術補遺:** 理論の数学的記述とPython実装のソースコード。 |
 | `Simulation_Redshift.ipynb` | **実証ログ:** 「重力赤方偏移の不感帯」を可視化したJupyter Notebook。 |
+| `VERIFICATION_LOG.md` | **歴史:** 独立したAIインスタンスによる理論の正当性検証ログ。 |
+| `Theoretical_Stress_Test.md` | **強度証明:** 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
 
 ## 🧪 Key Findings (主要な発見/予言)
 

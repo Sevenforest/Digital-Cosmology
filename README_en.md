@@ -39,10 +39,13 @@ Based on the vectors (constraints) provided by the author, the LLM derived the f
 
 | File | Description |
 |:---|:---|
-| `Vol1_Time_Non_Realism.pdf` | **Foundation:** Redefining "Time Dilation" via Energy Conservation (Relativity as Lag). (Japanese) |
-| `Vol2_Digital_Cosmology.pdf` | **Core Logic:** Database interpretation of wave functions and resolution of quantum paradoxes. (Japanese) |
-| `Appendix_SourceCode.pdf` | **Tech Appendix:** Mathematical description and Python implementation source code. (Japanese/Code) |
+| `Vol1_Time_Non_Realism.md` | **Foundation:** Redefining "Time Dilation" via Energy Conservation (Relativity as Lag). |
+| `Vol2_Digital_Cosmology.md` | **Core Logic:** Database interpretation of wave functions and resolution of quantum paradoxes. |
+| `Vol3_System_Architecture.md` | **Architecture:** Explaining Dark Matter/Energy as "Metadata & Scaling". |
+| `Appendix_SourceCode.md` | **Tech Appendix:** Mathematical description and Python implementation source code. |
 | `Simulation_Redshift.ipynb` | **Execution Log:** Jupyter Notebook visualizing the "Gravitational Redshift Dead Zone." |
+| `VERIFICATION_LOG.md` | **History:** Verification log by an independent AI instance witnessing the theory's completion. |
+| `Theoretical_Stress_Test.md` | **Stress Test:** Dialogue log demonstrating the theory's robustness against academic skepticism. |
 
 ## 🧪 Key Findings / Predictions
 
