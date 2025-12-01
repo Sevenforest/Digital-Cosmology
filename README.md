@@ -42,9 +42,10 @@
 | `Vol2_Digital_Cosmology.md` | **核心編:** 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
 | `Vol3_System_Architecture.md` | **システム編:** ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
 | `Appendix_SourceCode.md` | **技術補遺:** 理論の数学的記述とPython実装のソースコード。 |
-| `Simulation_Redshift.ipynb` | **実証ログ:** 「重力赤方偏移の不感帯」を可視化したJupyter Notebook。 |
+| `Simulation_Redshift.ipynb` | **実証ログ:** 不感帯の可視化および、観測ノイズに対する **感度解析（Sensitivity Analysis）** コード。 |
 | `VERIFICATION_LOG.md` | **歴史:** 独立したAIインスタンスによる理論の正当性検証ログ。 |
 | `Theoretical_Stress_Test.md` | **強度証明:** 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
+| `Experiment_Proposal.md` | **実験提案:** 重力赤方偏移における「不感帯」を検出するための具体的な実験プロトコル。 |
 
 ## 🧪 Key Findings (主要な発見/予言)
 

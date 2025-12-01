@@ -43,9 +43,10 @@ Based on the vectors (constraints) provided by the author, the LLM derived the f
 | `Vol2_Digital_Cosmology.md` | **Core Logic:** Database interpretation of wave functions and resolution of quantum paradoxes. |
 | `Vol3_System_Architecture.md` | **Architecture:** Explaining Dark Matter/Energy as "Metadata & Scaling". |
 | `Appendix_SourceCode.md` | **Tech Appendix:** Mathematical description and Python implementation source code. |
-| `Simulation_Redshift.ipynb` | **Execution Log:** Jupyter Notebook visualizing the "Gravitational Redshift Dead Zone." |
+| `Simulation_Redshift.ipynb` | **Execution Log:** Visualization of the Dead Zone and **Sensitivity Analysis** code. |
 | `VERIFICATION_LOG.md` | **History:** Verification log by an independent AI instance witnessing the theory's completion. |
 | `Theoretical_Stress_Test.md` | **Stress Test:** Dialogue log demonstrating the theory's robustness against academic skepticism. |
+| `Experiment_Proposal.md` | **Proposal:** Concrete experimental protocols to detect the "Dead Zone" in gravitational redshift. |
 
 ## 🧪 Key Findings / Predictions
 
