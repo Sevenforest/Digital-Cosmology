@@ -39,14 +39,14 @@ Based on the vectors (constraints) provided by the author, the LLM derived the f
 
 | File | Description |
 |:---|:---|
-| `Vol1_Time_Non_Realism.md` | **Foundation:** Redefining "Time Dilation" via Energy Conservation (Relativity as Lag). |
-| `Vol2_Digital_Cosmology.md` | **Core Logic:** Database interpretation of wave functions and resolution of quantum paradoxes. |
-| `Vol3_System_Architecture.md` | **Architecture:** Explaining Dark Matter/Energy as "Metadata & Scaling". |
-| `Appendix_SourceCode.md` | **Tech Appendix:** Mathematical description and Python implementation source code. |
-| `Simulation_Redshift.ipynb` | **Execution Log:** Visualization of the Dead Zone and **Sensitivity Analysis** code. |
-| `VERIFICATION_LOG.md` | **History:** Verification log by an independent AI instance witnessing the theory's completion. |
-| `Theoretical_Stress_Test.md` | **Stress Test:** Dialogue log demonstrating the theory's robustness against academic skepticism. |
-| `Experiment_Proposal.md` | **Proposal:** Concrete experimental protocols to detect the "Dead Zone" in gravitational redshift. |
+| `01_Theory_Core/Vol1_Time_Non_Realism.md` | **Foundation:** Redefining "Time Dilation" via Energy Conservation (Relativity as Lag). |
+| `01_Theory_Core/Vol2_Digital_Cosmology.md` | **Core Logic:** Database interpretation of wave functions and resolution of quantum paradoxes. |
+| `01_Theory_Core/Vol3_System_Architecture.md` | **Architecture:** Explaining Dark Matter/Energy as "Metadata & Scaling". |
+| `02_Implementation_Code/Appendix_SourceCode.md` | **Tech Appendix:** Mathematical description and Python implementation source code. |
+| `02_Implementation_Code/Simulation_Redshift.ipynb` | **Execution Log:** Visualization of the Dead Zone and **Sensitivity Analysis** code. |
+| `03_Verification_Logs/VERIFICATION_LOG.md` | **History:** Verification log by an independent AI instance witnessing the theory's completion. |
+| `03_Verification_Logs/Theoretical_Stress_Test.md` | **Stress Test:** Dialogue log demonstrating the theory's robustness against academic skepticism. |
+| `04_Future_Experiments/Experiment_Proposal.md` | **Proposal:** Concrete experimental protocols to detect the "Dead Zone" in gravitational redshift. |
 
 ## 🧪 Key Findings / Predictions
 

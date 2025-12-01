@@ -38,14 +38,14 @@
 
 | File | Description |
 |:---|:---|
-| `Vol1_Time_Non_Realism.md` | **基礎編:** エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
-| `Vol2_Digital_Cosmology.md` | **核心編:** 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
-| `Vol3_System_Architecture.md` | **システム編:** ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
-| `Appendix_SourceCode.md` | **技術補遺:** 理論の数学的記述とPython実装のソースコード。 |
-| `Simulation_Redshift.ipynb` | **実証ログ:** 不感帯の可視化および、観測ノイズに対する **感度解析（Sensitivity Analysis）** コード。 |
-| `VERIFICATION_LOG.md` | **歴史:** 独立したAIインスタンスによる理論の正当性検証ログ。 |
-| `Theoretical_Stress_Test.md` | **強度証明:** 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
-| `Experiment_Proposal.md` | **実験提案:** 重力赤方偏移における「不感帯」を検出するための具体的な実験プロトコル。 |
+| `01_Theory_Core/Vol1_Time_Non_Realism.md` | **基礎編:** エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
+| `01_Theory_Core/Vol2_Digital_Cosmology.md` | **核心編:** 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
+| `01_Theory_Core/Vol3_System_Architecture.md` | **システム編:** ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
+| `02_Implementation_Code/Appendix_SourceCode.md` | **技術補遺:** 理論の数学的記述とPython実装のソースコード。 |
+| `02_Implementation_Code/Simulation_Redshift.ipynb` | **実証ログ:** 不感帯の可視化および、観測ノイズに対する **感度解析（Sensitivity Analysis）** コード。 |
+| `03_Verification_Logs/VERIFICATION_LOG.md` | **歴史:** 独立したAIインスタンスによる理論の正当性検証ログ。 |
+| `03_Verification_Logs/Theoretical_Stress_Test.md` | **強度証明:** 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
+| `04_Future_Experiments/Experiment_Proposal.md` | **実験提案:** 重力赤方偏移における「不感帯」を検出するための具体的な実験プロトコル。 |
 
 ## 🧪 Key Findings (主要な発見/予言)
 
