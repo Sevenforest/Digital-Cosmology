@@ -65,3 +65,16 @@ The future does not change the past. Instead, the "observation result" functions
 
 This project is licensed under the MIT License.
 **When citing, please include a link to this repository or the issued DOI.**
+
+---
+
+> **⚠️ To Critics and Academics**
+>
+> This repository is not a "Hypothesis" but a **"System Specification (Spec)"**.
+>
+> Existing physics prioritizes "calculation results" over "logical consistency." We prioritize **"Logical Completeness (Bug-free Architecture)."**
+>
+> Therefore, we do not accept qualitative criticism based on old paradigms (e.g., "It contradicts standard theory").
+> If you find a logical contradiction (Bug) within this theory, **please submit a Pull Request with a mathematical proof or code that reproduces the error.**
+>
+> **Talk is cheap. Show me the Logic.**
