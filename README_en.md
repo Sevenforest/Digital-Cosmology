@@ -66,6 +66,15 @@ The future does not change the past. Instead, the "observation result" functions
 * Observation: `SELECT * FROM Screen WHERE Detector = 'D1'`
 * Result: `Interference Pattern`
 
+### 3. Sensitivity Analysis & Detection Limits
+The simulation code in this repository now includes a **Sensitivity Analysis** module that accounts for instrumental noise.
+* **Current Status:** With standard atomic clocks, the "step-like behavior" is buried in noise and appears continuous.
+* **Prediction:** The "Dead Zone" will only become statistically significant when the noise level drops below 1/3 of the step size (e.g., with next-gen optical lattice clocks).
+
+### 4. Historical Convergence: The Tifft Anomaly
+The "Dead Zone" predicted by this theory structurally aligns with the **"Redshift Quantization (72 km/s periodicity)"** reported by William Tifft et al., which remained an unsolved anomaly.
+Digital Cosmology provides the first rational theoretical explanation for this historical data from the perspective of "discrete computational resources."
+
 ## 🛡️ License
 
 This project is licensed under the MIT License.
