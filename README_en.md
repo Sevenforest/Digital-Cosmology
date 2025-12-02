@@ -37,6 +37,11 @@ Based on the vectors (constraints) provided by the author, the LLM derived the f
 
 ## 📂 Repository Contents
 
+### 🔰 For General Readers
+Before diving into the technical specifications, please read the comprehensive guide: **[👉 Digital Cosmology: The Guide](docs/index.md)**
+
+---
+
 | File | Description |
 |:---|:---|
 | `01_Theory_Core/Vol1_Time_Non_Realism.md` | **Foundation:** Redefining "Time Dilation" via Energy Conservation (Relativity as Lag). |

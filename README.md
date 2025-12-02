@@ -36,6 +36,11 @@
 
 ## 📂 Repository Contents
 
+### 🔰 For General Readers (一般の方へ)
+専門的な論文を読む前に、まずは理論の概要をわかりやすく解説した **[👉 デジタル宇宙論・超解説シリーズ (Guide)](docs/index.md)** をご覧ください。
+
+---
+
 | File | Description |
 |:---|:---|
 | `01_Theory_Core/Vol1_Time_Non_Realism.md` | **基礎編:** エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
