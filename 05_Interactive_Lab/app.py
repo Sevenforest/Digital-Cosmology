@@ -141,7 +141,7 @@ with tab2:
         
         if st.button("データを再生成（実験リセット）"):
             del st.session_state['quantum_data']
-            st.experimental_rerun()
+            st.rerun()
 
     with col2:
         st.subheader("📊 スクリーン上の分布 (Query Result)")
