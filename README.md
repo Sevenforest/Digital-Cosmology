@@ -2,6 +2,7 @@
 ### 宇宙という巨大な計算機システムの「仕様書」と実証コード
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17732299.svg)](https://doi.org/10.5281/zenodo.17732299)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://digital-cosmology-cwy3bcpaffkzr9hnywsatc.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [**🇯🇵 Japanese (Original)**](README.md) | [**🇺🇸 English**](README_en.md)
@@ -48,29 +49,36 @@
 
 ---
 
-| File | Description |
+| Directory / File | Description |
 |:---|:---|
-| `01_Theory_Core/Vol1_Time_Non_Realism.md` | **基礎編:** エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
-| `01_Theory_Core/Vol2_Digital_Cosmology.md` | **核心編:** 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
-| `01_Theory_Core/Vol3_System_Architecture.md` | **システム編:** ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
-| `02_Implementation_Code/Appendix_SourceCode.md` | **技術補遺:** 理論の数学的記述とPython実装のソースコード。 |
-| `02_Implementation_Code/Simulation_Redshift.ipynb` | **実証ログ:** 不感帯の可視化および、観測ノイズに対する **感度解析（Sensitivity Analysis）** コード。 |
-| `03_Verification_Logs/VERIFICATION_LOG.md` | **歴史:** 独立したAIインスタンスによる理論の正当性検証ログ。 |
-| `03_Verification_Logs/Theoretical_Stress_Test.md` | **強度証明:** 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
-| `04_Future_Experiments/Experiment_Proposal.md` | **実験提案:** 重力赤方偏移における「不感帯」を検出するための具体的な実験プロトコル。 |
-| `05_Interactive_Lab/` | **体験:** ブラウザで動作するStreamlit製シミュレーションアプリのソースコード。 |
+| **`01_Theory_Core/`** | **[仕様書] 宇宙のカーネル定義 (論文)** |
+| ├── `Vol1_Time_Non_Realism.md` | 基礎編: エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
+| ├── `Vol2_Digital_Cosmology.md` | 核心編: 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
+| └── `Vol3_System_Architecture.md` | システム編: ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
+| **`02_Implementation_Code/`** | **[実装] 実証コードと数理モデル** |
+| ├── `Appendix_SourceCode.md` | 技術補遺: 理論の数学的記述とPython実装のソースコード。 |
+| └── `Simulation_Redshift.ipynb` | 実証ログ: 不感帯の可視化および、観測ノイズに対する感度解析コード。 |
+| **`03_Verification_Logs/`** | **[監査] AIによる検証記録とストレステスト** |
+| ├── `Theoretical_Stress_Test.md` | 強度証明: 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
+| └── `VERIFICATION_LOG.md` | 歴史: 独立したAIインスタンスによる理論の正当性検証ログ。 |
+| **`04_Future_Experiments/`** | **[提案] 不感帯検出の実験プロトコル** |
+| └── `Experiment_Proposal.md` | RFC: 光格子時計を用いた重力赤方偏移における「不感帯」検出実験の提案。 |
+| **`05_Interactive_Lab/`** | **[体験] Webアプリケーション** |
+| └── `app.py` | Streamlit: ブラウザで動作する理論シミュレーターのソースコード。 |
+| **`docs/`** | **[解説] 一般向けガイドツアー** |
 
 ## 🧪 Key Findings (主要な発見/予言)
 
 ### 1. 重力赤方偏移の「不感帯 (Dead Zone)」
 本理論が正しければ、極めて微小な重力ポテンシャル差において、エネルギー変化がプランク単位の整数倍に満たない場合、赤方偏移が発生しない（周波数が変化しない）領域が存在する。
-*本リポジトリのPythonコードにより、この「階段状の挙動」がシミュレーションされている。*
+*（本リポジトリの Interactive Lab にて、この「階段状の挙動」をシミュレーション体験可能です）*
 
 ### 2. 量子消しゴムの「SQLクエリ」解釈
 「未来が過去を変える」のではなく、「観測結果」が「過去の暗号化データ（ノイズ）」を復号する鍵（検索キー）として機能する。
 * Past Data: `Encrypted Noise`
 * Observation: `SELECT * FROM Screen WHERE Detector = 'D1'`
 * Result: `Interference Pattern`
+*（Interactive Lab にて、フィルタリング操作によるパターンの出現を再現可能です）*
 
 ### 3. 観測精度と検出限界 (Sensitivity Analysis)
 本リポジトリには、観測機器のノイズを考慮した **感度解析モジュール** が含まれている。

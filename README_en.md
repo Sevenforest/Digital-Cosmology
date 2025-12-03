@@ -2,6 +2,7 @@
 ### Specifications and Verification Code for the Universe as a Giant Computing System
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17732299.svg)](https://doi.org/10.5281/zenodo.17732299)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://digital-cosmology-cwy3bcpaffkzr9hnywsatc.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [**🇯🇵 Japanese (Original)**](README.md) | [**🇺🇸 English**](README_en.md)
@@ -49,23 +50,29 @@ We have deployed a web application that allows you to experience the "Dead Zone 
 
 ---
 
-| File | Description |
+| Directory / File | Description |
 |:---|:---|
-| `01_Theory_Core/Vol1_Time_Non_Realism.md` | **Foundation:** Redefining "Time Dilation" via Energy Conservation (Relativity as Lag). |
-| `01_Theory_Core/Vol2_Digital_Cosmology.md` | **Core Logic:** Database interpretation of wave functions and resolution of quantum paradoxes. |
-| `01_Theory_Core/Vol3_System_Architecture.md` | **Architecture:** Explaining Dark Matter/Energy as "Metadata & Scaling". |
-| `02_Implementation_Code/Appendix_SourceCode.md` | **Tech Appendix:** Mathematical description and Python implementation source code. |
-| `02_Implementation_Code/Simulation_Redshift.ipynb` | **Execution Log:** Visualization of the Dead Zone and **Sensitivity Analysis** code. |
-| `03_Verification_Logs/VERIFICATION_LOG.md` | **History:** Verification log by an independent AI instance witnessing the theory's completion. |
-| `03_Verification_Logs/Theoretical_Stress_Test.md` | **Stress Test:** Dialogue log demonstrating the theory's robustness against academic skepticism. |
-| `04_Future_Experiments/Experiment_Proposal.md` | **Proposal:** Concrete experimental protocols to detect the "Dead Zone" in gravitational redshift. |
-| `05_Interactive_Lab/` | **Interactive:** Source code for the Streamlit web application. |
+| **`01_Theory_Core/`** | **[Spec] Kernel Definitions (Papers)** |
+| ├── `Vol1_Time_Non_Realism.md` | Foundation: Redefining "Time Dilation" via Energy Conservation. |
+| ├── `Vol2_Digital_Cosmology.md` | Core Logic: Database interpretation of wave functions and resolution of paradoxes. |
+| └── `Vol3_System_Architecture.md` | Architecture: Explaining Dark Matter/Energy as "Metadata & Scaling". |
+| **`02_Implementation_Code/`** | **[Implementation] Proof of Concept & Models** |
+| ├── `Appendix_SourceCode.md` | Tech Appendix: Mathematical description and Python implementation. |
+| └── `Simulation_Redshift.ipynb` | Execution Log: Visualization of the Dead Zone and Sensitivity Analysis. |
+| **`03_Verification_Logs/`** | **[Audit] Verification & Stress Tests** |
+| ├── `Theoretical_Stress_Test.md` | Stress Test: Dialogue log demonstrating robustness against skepticism. |
+| └── `VERIFICATION_LOG.md` | History: Verification log by an independent AI instance. |
+| **`04_Future_Experiments/`** | **[Proposal] Experimental Protocols** |
+| └── `Experiment_Proposal.md` | RFC: Concrete protocols to detect the "Dead Zone" using Optical Lattice Clocks. |
+| **`05_Interactive_Lab/`** | **[Experience] Web Application** |
+| └── `app.py` | Streamlit: Source code for the browser-based theory simulator. |
+| **`docs/`** | **[Guide] General Introduction** |
 
 ## 🧪 Key Findings / Predictions
 
 ### 1. Gravitational Redshift "Dead Zone"
 If this theory is correct, in extremely minute gravitational potential differences, if the energy change is less than an integer multiple of the Planck unit, there exists a region where no redshift occurs (frequency does not change).
-*The Python code in this repository simulates this "staircase behavior."*
+*(You can simulate this "staircase behavior" in the Interactive Lab linked above.)*
 
 ### 2. "SQL Query" Interpretation of Quantum Eraser
 The future does not change the past. Instead, the "observation result" functions as a key (Search Key) to decrypt the "past encrypted data (noise)."
@@ -73,6 +80,7 @@ The future does not change the past. Instead, the "observation result" functions
 * Past Data: `Encrypted Noise`
 * Observation: `SELECT * FROM Screen WHERE Detector = 'D1'`
 * Result: `Interference Pattern`
+*(You can experience this filtering process in the Interactive Lab.)*
 
 ### 3. Sensitivity Analysis & Detection Limits
 The simulation code in this repository now includes a **Sensitivity Analysis** module that accounts for instrumental noise.
