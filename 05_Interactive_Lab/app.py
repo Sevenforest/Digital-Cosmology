@@ -92,31 +92,19 @@ with tab1:
         else:
             st.warning(f"⚠️ **検出困難** ノイズ({noise_level}) が大きすぎます。階段が埋もれてしまい、標準理論と区別がつきません。")
 
-# --- TAB 2: 量子消しゴム (Quantum Eraser) ---
+# --- TAB 2: 量子消しゴム (大幅アップデート) ---
 with tab2:
-    st.header("2. 遅延選択量子消しゴム: 「因果逆転」vs「DB検索」")
+    st.header("2. 遅延選択量子消しゴムの「脱洗脳」")
     
-    st.markdown("""
-    **既存のアカデミアの解釈（バグ？）:** 「未来の観測（D1/D2での検出）が、過去の粒子（スクリーン着弾）の振る舞いを変えた！ 因果律が逆転している！ 不思議だ！」
-
-    **デジタル宇宙論の解釈（仕様！）:** 「未来も過去も関係ない。スクリーン上のデータは『暗号化されたノイズ』として既に保存されている。
-    検出器の信号は、そのDBから意味のあるパターンを抽出するための**『検索キー（WHERE句）』**に過ぎない」
-    """)
-
-    col1, col2 = st.columns([1, 2])
-    
-    # シミュレーションの状態管理
-    if 'quantum_data' not in st.session_state:
-        # データ生成（過去の確定）
-        num_data = 5000
+    # データの生成（セッション状態で保持）
+    if 'quantum_db' not in st.session_state:
+        num_data = 3000
         data = []
         for i in range(num_data):
-            # 隠れ変数（経路タグ）
-            tag = np.random.choice(['Path_A', 'Path_B'])
-            
-            # 位置の決定（タグに応じて確率分布を変える＝干渉の元）
-            # Path_A: cos^2, Path_B: sin^2 -> 足すと1（ノイズ）になる
-            if tag == 'Path_A':
+            # 隠れ変数（これがデジタル宇宙の「確定した位置情報」）
+            tag = np.random.choice(['Type_A', 'Type_B'])
+            # Type_Aは山(干渉)、Type_Bは谷(逆干渉)の確率分布に従う
+            if tag == 'Type_A':
                 while True:
                     pos = np.random.randint(0, 100)
                     if np.random.rand() < np.cos((pos - 50) * 0.2) ** 2: break
@@ -125,69 +113,95 @@ with tab2:
                     pos = np.random.randint(0, 100)
                     if np.random.rand() < np.sin((pos - 50) * 0.2) ** 2: break
             
-            data.append({'ID': i, 'Position': pos, 'Tag': tag})
-        st.session_state['quantum_data'] = pd.DataFrame(data)
+            # ノイズとして観測される全データ（D0）
+            data.append({'ID': i, 'Position': pos, 'Hidden_Tag': tag})
+        st.session_state['quantum_db'] = pd.DataFrame(data)
 
-    df = st.session_state['quantum_data']
+    df = st.session_state['quantum_db']
 
-    with col1:
-        st.subheader("🎛️ 検出器（フィルタ）の選択")
-        st.write("実験を開始しました。スクリーンには5000個の粒子が着弾済み（DB保存済み）です。")
-        
-        filter_mode = st.radio(
-            "どの検出器のデータを見ますか？ (SELECT Query)",
-            ["D0 (全データ/フィルタなし)", "D1 (経路Aの干渉縞)", "D2 (経路Bの干渉縞)", "D3/D4 (経路情報あり/干渉なし)"]
+    # --- SCENE 1: アカデミアの視点 ---
+    st.subheader("👻 Scene 1: アカデミアが見ている「パラドクス」")
+    st.info("彼らは**「スクリーン上の粒子は、観測されるまで位置が確定していない（確率の波である）」**と信じています。")
+    
+    col_ac1, col_ac2 = st.columns([1, 2])
+    
+    with col_ac1:
+        st.markdown("#### 🔭 観測設定 (Future)")
+        detector = st.radio(
+            "未来でスイッチを切り替える:",
+            ["D0 (何もしない)", "D1 (経路Aを検出)", "D2 (経路Bを検出)"],
+            index=0
         )
-        
-        if st.button("データを再生成（実験リセット）"):
-            del st.session_state['quantum_data']
-            st.rerun()
+        st.write("※ D1/D2を選ぶと、過去に着弾したはずのスクリーン上に**「干渉縞」**が現れます。")
 
-    with col2:
-        st.subheader("📊 スクリーン上の分布 (Query Result)")
+    with col_ac2:
+        # アカデミア視点のプロット
+        fig_ac, ax_ac = plt.subplots(figsize=(8, 3))
         
-        # フィルタリングロジック（これがSQLクエリの正体）
-        filtered_df = df
-        query_sql = "SELECT * FROM Screen_Data"
-        color = 'gray'
-        
-        if filter_mode == "D1 (経路Aの干渉縞)":
-            filtered_df = df[df['Tag'] == 'Path_A']
-            query_sql = "SELECT * FROM Screen_Data WHERE Tag = 'Path_A' -- (Detector D1 Active)"
-            color = 'red'
-        elif filter_mode == "D2 (経路Bの干渉縞)":
-            filtered_df = df[df['Tag'] == 'Path_B']
-            query_sql = "SELECT * FROM Screen_Data WHERE Tag = 'Path_B' -- (Detector D2 Active)"
-            color = 'blue'
-        elif filter_mode == "D3/D4 (経路情報あり/干渉なし)":
-            # D3/D4は経路が特定されるが、干渉はしない（単なるガウス分布の和などになるが、ここでは簡易的に全データの半分ずつとして表現）
-            # ※厳密にはD3/D4は干渉項が消えるが、本デモでは「タグによる選別ができない（ランダム）」として表現
-            filtered_df = df.sample(frac=0.5) 
-            query_sql = "SELECT * FROM Screen_Data WHERE Detector IN ('D3', 'D4') -- (Path Known, No Interference)"
-            color = 'green'
+        # フィルタリング処理
+        if detector == "D0 (何もしない)":
+            display_data = df
+            title = "D0: Just Noise (No Pattern)"
+            color = "gray"
+            msg = "「ほら、ただのノイズ（山）だ。粒子はランダムに来ている」"
+        elif detector == "D1 (経路Aを検出)":
+            display_data = df[df['Hidden_Tag'] == 'Type_A']
+            title = "D1: Interference Pattern A (Magic?)"
+            color = "red"
+            msg = "「なっ！？ 未来でD1を選んだ瞬間、過去のデータが『干渉縞』に変わった！ 未来が過去を書き換えたぞ！！」"
+        else: # D2
+            display_data = df[df['Hidden_Tag'] == 'Type_B']
+            title = "D2: Interference Pattern B (Reverse Magic?)"
+            color = "blue"
+            msg = "「今度は逆の干渉縞だ！ まるで粒子が『未来の観測』を予知して着弾位置を変えているようだ……神秘だ……」"
 
-        # SQL表示
-        st.code(query_sql, language="sql")
-
-        # ヒストグラム描画
-        fig, ax = plt.subplots(figsize=(10, 5))
-        ax.hist(filtered_df['Position'], bins=50, color=color, alpha=0.7, range=(0, 100))
-        ax.set_xlim(0, 100)
-        ax.set_ylim(0, 250)
-        ax.set_xlabel("Screen Position")
-        ax.set_ylabel("Particle Count")
+        ax_ac.hist(display_data['Position'], bins=50, color=color, alpha=0.6, range=(0, 100))
+        ax_ac.set_title(title)
+        ax_ac.set_yticks([])
+        st.pyplot(fig_ac)
         
-        if filter_mode == "D0 (全データ/フィルタなし)":
-            ax.set_title("All Data: Just Noise (Interference Hidden)")
-            st.info("全てのデータを足し合わせると、波の山と谷が打ち消し合って「ただのノイズ（山なり）」に見えます。物理学者はこれを「波動関数の収縮前」と呼びますが、エンジニアは「全件取得（SELECT ALL）」と呼びます。")
-        elif filter_mode in ["D1 (経路Aの干渉縞)", "D2 (経路Bの干渉縞)"]:
-            ax.set_title(f"Filtered by {filter_mode.split()[0]}: Interference Pattern Emerges!")
-            st.success(f"特定のタグ（{filter_mode.split()[0]}）でフィルタリングすると、隠れていた干渉縞が浮かび上がりました！ データは最初からそこにありましたが、**クエリを投げるまで見えなかっただけ**です。")
+        if detector != "D0 (何もしない)":
+            st.error(f"😱 **Academia Panic:** {msg}")
         else:
-            ax.set_title("D3/D4: No Interference Pattern")
-            st.warning("経路情報が確定する（D3/D4）ということは、干渉の位相情報（タグ）が相殺される、あるいは意味をなさなくなるため、干渉縞は現れません。")
+            st.caption(msg)
 
-        st.pyplot(fig)
+    st.divider()
+
+    # --- SCENE 2: デジタル宇宙論の視点 ---
+    st.subheader("💻 Scene 2: デジタル宇宙論の「種明かし」")
+    st.success("我々は**「位置情報は最初から確定しており、DBに保存されている」**と考えます。魔法などありません。あるのは**「フィルタリング（SQL）」**だけです。")
+
+    if st.checkbox("👉 管理者権限で「DBの中身（ネタ）」を見る", value=False):
+        col_dig1, col_dig2 = st.columns([1, 1])
+        
+        with col_dig1:
+            st.markdown("#### 📂 サーバー上の生データ (Raw Data)")
+            st.markdown("アカデミアには見えていない「隠れ変数（Tag）」が、最初から記録されています。")
+            # データフレームを表示（ネタバレ）
+            st.dataframe(df.head(10), use_container_width=True)
+            st.caption("... (Total 3000 rows)")
+
+        with col_dig2:
+            st.markdown("#### 🧠 実行された処理 (Logic)")
+            st.markdown("貴方がスイッチ（D1/D2）を切り替えた時、世界で起きたのは「因果逆転」ではなく、単なる**「WHERE句の実行」**です。")
+            
+            if detector == "D0 (何もしない)":
+                sql = "SELECT * FROM Universe_Log"
+                explanation = "全データを表示しているだけです。Type_A（山）と Type_B（谷）が混ざるので、平らに見えていただけです。"
+            elif detector == "D1 (経路Aを検出)":
+                sql = "SELECT * FROM Universe_Log\nWHERE Hidden_Tag = 'Type_A'"
+                explanation = "「Type_A」のタグがついた行だけを抽出（SELECT）しました。**赤色のデータは最初からそこにありました。** 新しく作られたわけではありません。"
+            else:
+                sql = "SELECT * FROM Universe_Log\nWHERE Hidden_Tag = 'Type_B'"
+                explanation = "「Type_B」の行だけを抽出しました。青色のデータが表示されただけです。"
+
+            st.code(sql, language="sql")
+            st.info(explanation)
+
+    st.markdown("---")
+    if st.button("🔄 実験をリセット (Re-run Simulation)"):
+        del st.session_state['quantum_db']
+        st.rerun()
 
 # --- TAB 3: 理論解説 ---
 with tab3:
