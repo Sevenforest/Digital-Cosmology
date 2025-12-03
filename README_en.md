@@ -40,6 +40,13 @@ Based on the vectors (constraints) provided by the author, the LLM derived the f
 ### 🔰 For General Readers
 Before diving into the technical specifications, please read the comprehensive guide: **[👉 Digital Cosmology: The Guide](docs/index.md)**
 
+### 🎮 Interactive Lab (Live Demo)
+We have deployed a web application that allows you to experience the "Dead Zone (Step-like Redshift)" and "Quantum SQL Filtering" directly in your browser. No installation required.
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://digital-cosmology-cwy3bcpaffkzr9hnywsatc.streamlit.app/)
+
+**👉 [Launch Live Simulation](https://digital-cosmology-cwy3bcpaffkzr9hnywsatc.streamlit.app/)**
+
 ---
 
 | File | Description |
@@ -52,6 +59,7 @@ Before diving into the technical specifications, please read the comprehensive g
 | `03_Verification_Logs/VERIFICATION_LOG.md` | **History:** Verification log by an independent AI instance witnessing the theory's completion. |
 | `03_Verification_Logs/Theoretical_Stress_Test.md` | **Stress Test:** Dialogue log demonstrating the theory's robustness against academic skepticism. |
 | `04_Future_Experiments/Experiment_Proposal.md` | **Proposal:** Concrete experimental protocols to detect the "Dead Zone" in gravitational redshift. |
+| `05_Interactive_Lab/` | **Interactive:** Source code for the Streamlit web application. |
 
 ## 🧪 Key Findings / Predictions
 

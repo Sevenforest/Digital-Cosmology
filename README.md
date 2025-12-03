@@ -39,6 +39,13 @@
 ### 🔰 For General Readers (一般の方へ)
 専門的な論文を読む前に、まずは理論の概要をわかりやすく解説した **[👉 デジタル宇宙論・超解説シリーズ (Guide)](docs/index.md)** をご覧ください。
 
+### 🎮 Interactive Lab (ブラウザで実験する)
+理論の核心である「不感帯（階段状の赤方偏移）」や「量子消しゴムのSQLフィルタリング」を、ブラウザ上でパラメータを操作しながら体験できるWebアプリを公開しました。Python環境は不要です。
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://digital-cosmology-cwy3bcpaffkzr9hnywsatc.streamlit.app/)
+
+**👉 [Launch Live Simulation / 実験アプリを起動する](https://digital-cosmology-cwy3bcpaffkzr9hnywsatc.streamlit.app/)**
+
 ---
 
 | File | Description |
@@ -51,6 +58,7 @@
 | `03_Verification_Logs/VERIFICATION_LOG.md` | **歴史:** 独立したAIインスタンスによる理論の正当性検証ログ。 |
 | `03_Verification_Logs/Theoretical_Stress_Test.md` | **強度証明:** 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
 | `04_Future_Experiments/Experiment_Proposal.md` | **実験提案:** 重力赤方偏移における「不感帯」を検出するための具体的な実験プロトコル。 |
+| `05_Interactive_Lab/` | **体験:** ブラウザで動作するStreamlit製シミュレーションアプリのソースコード。 |
 
 ## 🧪 Key Findings (主要な発見/予言)
 
