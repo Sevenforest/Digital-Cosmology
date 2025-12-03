@@ -24,8 +24,16 @@ st.markdown("""
 # サイドバー：設定
 st.sidebar.header("⚙️ System Parameters")
 
+# GitHubリンク (Tab 3の代わり)
+st.sidebar.markdown("---")
+st.sidebar.markdown("""
+### 📘 Theory & Docs
+Full specifications available on GitHub:
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/Sevenforest/Digital-Cosmology)
+""")
+
 # タブの作成
-tab1, tab2, tab3 = st.tabs(["📉 Gravitational Redshift (The Dead Zone)", "🐱 Quantum Eraser (SQL Query)", "📘 About Theory"])
+tab1, tab2 = st.tabs(["📉 Gravitational Redshift (The Dead Zone)", "🐱 Quantum Eraser (SQL Query)"])
 
 # --- TAB 1: 重力赤方偏移 (The Dead Zone) ---
 with tab1:
@@ -203,6 +211,3 @@ with tab2:
         del st.session_state['quantum_db']
         st.rerun()
 
-# --- TAB 3: 理論解説 ---
-with tab3:
-    st.markdown(open("README.md", encoding='utf-8').read())
