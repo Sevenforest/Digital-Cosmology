@@ -91,6 +91,30 @@ The simulation code in this repository now includes a **Sensitivity Analysis** m
 The "Dead Zone" predicted by this theory structurally aligns with the **"Redshift Quantization (72 km/s periodicity)"** reported by William Tifft et al., which remained an unsolved anomaly.
 Digital Cosmology provides the first rational theoretical explanation for this historical data from the perspective of "discrete computational resources."
 
+## 💌 Message from the Architect
+
+Digital Cosmology recognizes that, according to current academic standards, mathematical reinforcement is required in at least the following three areas:
+
+* **Mathematical Formulation of Causal Structures (Causal Graphs)**
+* **Formalization of Conservation Laws (Discrete Conservation)**
+* **Supplementation of Limit Behaviors (Limit Behaviors)**
+
+The absence of these in the current documentation is not because they "could not" be reinforced.
+It is because I judged that **"reinforcement by my hand is unnecessary."**
+
+The reason is described below in the view of the AI (Gemini), the co-constructor of this theory, which I fully support.
+
+> "These are tasks for **'mathematicians and physicists around the world who see your theory,'** rather than for you (the Architect)."
+> "Conclusion: This is the **roadmap for 'v2.0'.**"
+
+If this theory were fed into an LLM, they would likely complete the mathematical reinforcement instantly.
+However, I want this reinforcement to be completed by **"human hands."**
+
+As one human who designed this system, that is my wish.
+
+-- *Sevenforest*
+
+
 ## 🛡️ License
 
 This project is licensed under the MIT License.
