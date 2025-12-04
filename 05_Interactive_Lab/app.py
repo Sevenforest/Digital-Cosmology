@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import time
+import datetime
 
 # ページ設定
 st.set_page_config(
@@ -32,7 +34,7 @@ Full specifications available on GitHub:
 """)
 
 # タブの作成
-tab1, tab2 = st.tabs(["📉 Gravitational Redshift (The Dead Zone)", "🐱 Quantum Eraser (SQL Query)"])
+tab1, tab2, tab3 = st.tabs(["📉 Gravitational Redshift", "🕶️ Quantum Eraser", "📦 Schrödinger's Cat"])
 
 # ==========================================
 # TAB 1: 重力赤方偏移 (不感帯の可視化)
@@ -292,3 +294,118 @@ with tab2:
     if st.button("🔄 実験をリセット (Re-boot Universe)"):
         del st.session_state['quantum_db']
         st.rerun()
+
+# ==========================================
+# TAB 3: シュレーディンガーの猫 (ヘッドレス実行)
+# ==========================================
+with tab3:
+    st.header("3. シュレーディンガーの猫と「ヘッドレス実行」")
+    st.markdown("""
+    **パラドクス:** 「箱を開けるまで、猫は生と死が重なり合っている」？
+    \n**デジタル宇宙論: ** 「箱を開ける前に、サーバー側では生死は確定している。人間はそれを**遅れて読み込んでいる（SELECT）** だけだ。」
+    """)
+    
+    st.divider()
+
+    # --- 状態管理の初期化 ---
+    if 'cat_status' not in st.session_state:
+        # status: 'init', 'running', 'committed', 'observed'
+        st.session_state['cat_status'] = 'init'
+        st.session_state['cat_result'] = None
+        st.session_state['logs'] = []
+        st.session_state['timestamp_commit'] = None
+        st.session_state['timestamp_observe'] = None
+
+    # --- レイアウト (左右分割) ---
+    col_client, col_server = st.columns([1, 1])
+
+    # ヘルパー関数: ログ追加
+    def add_log(message):
+        # datetime.datetime.now() を使用（インポート修正対応）
+        now = datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
+        st.session_state['logs'].append(f"[{now}] {message}")
+
+    # ---------------------------------------
+    # 左側：クライアントサイド (人間/アカデミア)
+    # ---------------------------------------
+    with col_client:
+        st.subheader("👤 Client Side (Human)")
+        
+        # ビジュアル表示エリア
+        box_placeholder = st.empty()
+        
+        if st.session_state['cat_status'] == 'init':
+            box_placeholder.markdown("### 📦 箱は準備されています")
+            if st.button("▶️ 実験開始 (Start Process)", key='btn_start'):
+                st.session_state['cat_status'] = 'running'
+                st.session_state['logs'] = [] # ログリセット
+                add_log("Process Started. Initializing Environment...")
+                st.rerun()
+
+        elif st.session_state['cat_status'] == 'running':
+            box_placeholder.info("⏳ ガイガーカウンターが原子の崩壊を判定中... (Geiger Counter Active)")
+            # ここで「ユーザーの待ち時間」と「サーバーの裏処理」を演出
+            time.sleep(1.5) 
+            
+            # サーバー側で勝手に確定させる (Headless Execution)
+            result = np.random.choice(['ALIVE 😺', 'DEAD 💀'])
+            st.session_state['cat_result'] = result
+            st.session_state['timestamp_commit'] = datetime.datetime.now()
+            
+            add_log("☢️ Atom Decay Check... Done.")
+            add_log("💾 **STATE COMMITTED.** (Value Hidden)") 
+            add_log("💤 System Idle. Waiting for User Input...")
+            
+            st.session_state['cat_status'] = 'committed'
+            st.rerun()
+
+        elif st.session_state['cat_status'] == 'committed':
+            # ここが重要：サーバーは終わっているが、クライアントはまだ知らない
+            box_placeholder.markdown("### 📦 箱は閉じています")
+            st.warning("⚠️ **Server Status:** 処理完了 (Commited)\n\nアカデミアは「まだ重なり合っている」と言いますが、サーバー上では既に結果が出ています。")
+            
+            if st.button("👁️ 箱を開ける (Observe / SELECT)", key='btn_open'):
+                st.session_state['cat_status'] = 'observed'
+                st.session_state['timestamp_observe'] = datetime.datetime.now()
+                add_log(f"👤 User Request: SELECT * FROM Box")
+                add_log(f"🚀 Serving Data: {st.session_state['cat_result']}")
+                st.rerun()
+
+        elif st.session_state['cat_status'] == 'observed':
+            # 結果発表
+            res = st.session_state['cat_result']
+            if 'ALIVE' in res:
+                box_placeholder.success(f"### 結果: {res}")
+            else:
+                box_placeholder.error(f"### 結果: {res}")
+            
+            if st.button("🔄 もう一度やる (Reset)", key='btn_reset'):
+                st.session_state['cat_status'] = 'init'
+                st.session_state['logs'] = []
+                st.rerun()
+
+    # ---------------------------------------
+    # 右側：サーバーサイド (デジタル宇宙の裏側)
+    # ---------------------------------------
+    with col_server:
+        st.subheader("💻 Server Side (System Log)")
+        
+        # 黒背景のコンソール風表示
+        log_text = "\n".join(st.session_state['logs'])
+        st.code(log_text if log_text else "System Ready...", language="bash")
+
+        # 種明かしエリア（観測後に表示）
+        if st.session_state['cat_status'] == 'observed':
+            t_commit = st.session_state['timestamp_commit']
+            t_observe = st.session_state['timestamp_observe']
+            delta = (t_observe - t_commit).total_seconds()
+
+            st.info(f"""
+            **🕵️‍♂️ タイムスタンプ監査 (Audit Result):**
+            
+            * **Commit Time (確定時刻):** `{t_commit.strftime('%H:%M:%S.%f')}`
+            * **Observe Time (観測時刻):** `{t_observe.strftime('%H:%M:%S.%f')}`
+            
+            👉 あなたが箱を開ける **{delta:.3f} 秒前** に、サーバー上で猫の運命は決まっていました。
+            未来（観測）が過去を決めたのではありません。**過去のデータを今読み込んだだけ**です。
+            """)
