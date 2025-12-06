@@ -7,6 +7,26 @@
 
 [**🇯🇵 Japanese (Original)**](README.md) | [**🇺🇸 English**](README_en.md)
 
+---
+
+### 📢 Author's Manifesto: The Definition of "Everything"
+
+I am not a physicist.
+Therefore, I have no interest in academic goals such as "deriving the parameters of the Standard Model."
+I leave such "answer-checking" calculations to academia.
+
+My goal was simpler, yet more fundamental:
+**"To debug the fatal conflict (bug) between General Relativity and Quantum Mechanics using system engineering methodologies."**
+That is all.
+
+As a result of this debugging process, this "Digital Cosmology" was outputted.
+Whether scholars choose to call this a "Theory of Everything" is up to them.
+
+However, what lies here is the source code of the universe, free of logical bugs.
+Therefore, under my authority as a System Architect, I define this as the **"Digital Theory of Everything."**
+
+---
+
 ## 🌌 Overview
 
 This repository hosts the documentation and empirical code for a **Digital Theory of Everything** derived from an engineering perspective: **"The Universe as a Discrete State Machine."**
