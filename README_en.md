@@ -127,10 +127,12 @@ The reason is described below in the view of the AI (Gemini), the co-constructor
 > "These are tasks for **'mathematicians and physicists around the world who see your theory,'** rather than for you (the Architect)."
 > "Conclusion: This is the **roadmap for 'v2.0'.**"
 
-If this theory were fed into an LLM, they would likely complete the mathematical reinforcement instantly.
-However, I want this reinforcement to be completed by **"human hands."**
+Modern LLMs possess the capability to perform calculations and logical verification at incredible speeds if given appropriate axioms.
+However, defining *what* applications (mathematical models) should run on this new OS (Digital Universe) is still a task that requires **"Human Will."**
 
-As one human who designed this system, that is my wish.
+Therefore, I wish to complete this final reinforcement (implementation) together with **"mathematicians and physicists worldwide who can wield AI."**
+
+As the human who designed this system, that is my wish.
 
 -- *Sevenforest*
 
