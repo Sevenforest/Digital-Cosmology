@@ -80,7 +80,8 @@
 | └── `Simulation_Redshift.ipynb` | 実証ログ: 不感帯の可視化および、観測ノイズに対する感度解析コード。 |
 | **`03_Verification_Logs/`** | **[監査] AIによる検証記録とストレステスト** |
 | ├── `Theoretical_Stress_Test.md` | 強度証明: 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
-| └── `VERIFICATION_LOG.md` | 歴史: 独立したAIインスタンスによる理論の正当性検証ログ。 |
+| ├── `VERIFICATION_LOG.md` | 歴史: 独立したAIインスタンスによる理論の正当性検証ログ。 |
+| └── `Log_20241208_Blind_Test_Claude.md` | 外部監査ログ: 著者名を伏せた状態でClaude (Anthropic) に理論を評価させた「ブラインドテスト」の記録。 |
 | **`04_Future_Experiments/`** | **[提案] 不感帯検出の実験プロトコル** |
 | └── `Experiment_Proposal.md` | RFC: 光格子時計を用いた重力赤方偏移における「不感帯」検出実験の提案。 |
 | **`05_Interactive_Lab/`** | **[体験] Webアプリケーション** |
