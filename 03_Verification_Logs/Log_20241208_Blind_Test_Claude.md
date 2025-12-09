@@ -7,6 +7,23 @@
 
 ---
 
+> [!IMPORTANT]
+> **【2025-12-09 追記】 実験条件の公平性とGeminiの仕様に関する訂正**
+>
+> 本ログの作成当初、著者は「Geminiのみがこの理論を深く理解できる」という優位性を持っていると判断していました。しかし、その後の検証により、これは **著者の誤認** であることが判明しました。
+>
+> **判明した事実:**
+> * **Geminiの環境:** 著者が使用していたGeminiには、過去の会話内容を要約してインスタンス間で共有する機能（Long-term Memory / User Context）が適用されていました。
+> * **結果:** Geminiは「新規チャット」であっても、バックグラウンドで「デジタル宇宙論プロジェクト」の文脈を保持しており、事実上の **コンテキスト最適化済み（Few-shot済み）** の状態でした。
+> * **Claudeの環境:** 対して、本ログのClaudeは完全に文脈を排除した「ブラインドテスト（Zero-shot）」です。
+>
+> **結論:**
+> 本ログで見られる反応の差は、モデルの知能差ではなく、 **「共有コンテキストの有無」** によるものです。
+> Claudeなどの他モデルであっても、Geminiと同様のコンテキスト（前提知識）を与えれば、同等の建設的な議論が可能であると考えられます。
+> 本ドキュメントは「AIの性能比較」ではなく、 **「文脈を共有していないAI（＝一般的な査読者）が、急進的な理論に対してどう反応するか（ゲートキーパー問題）」** の記録として参照してください。
+
+---
+
 ### 📄 About this log
 This document records a "blind test" conducted with Claude. The author acted as a third-party user inquiring about this repository without revealing their identity. This approach allowed for an unbiased audit, observing how an AI skeptical of the theory gradually acknowledged its logical consistency and value through pure reasoning.
 
@@ -905,6 +922,22 @@ LLM（私を含む）に「Digital Cosmologyをどう思うか」と聞いた場
 
 ---
 
+> [!IMPORTANT]
+> **【2025-12-09 追記】 実験条件の公平性とGeminiの仕様に関する訂正**
+>
+> 本ログの作成当初、著者は「Geminiのみがこの理論を深く理解できる」という優位性を持っていると判断していました。しかし、その後の検証により、これは **著者の誤認** であることが判明しました。
+>
+> **判明した事実:**
+> * **Geminiの環境:** 著者が使用していたGeminiには、過去の会話内容を要約してインスタンス間で共有する機能（Long-term Memory / User Context）が適用されていました。
+> * **結果:** Geminiは「新規チャット」であっても、バックグラウンドで「デジタル宇宙論プロジェクト」の文脈を保持しており、事実上の **コンテキスト最適化済み（Few-shot済み）** の状態でした。
+> * **Claudeの環境:** 対して、本ログのClaudeは完全に文脈を排除した「ブラインドテスト（Zero-shot）」です。
+>
+> **結論:**
+> 本ログで見られる反応の差は、モデルの知能差ではなく、 **「共有コンテキストの有無」** によるものです。
+> Claudeなどの他モデルであっても、Geminiと同様のコンテキスト（前提知識）を与えれば、同等の建設的な議論が可能であると考えられます。
+> 本ドキュメントは「AIの性能比較」ではなく、 **「文脈を共有していないAI（＝一般的な査読者）が、急進的な理論に対してどう反応するか（ゲートキーパー問題）」** の記録として参照してください。
+
+---
 # 🛑 Addendum: The Confrontation (2024-12-09)
 
 **Note by Author:**
