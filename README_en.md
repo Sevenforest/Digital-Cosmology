@@ -129,26 +129,25 @@ Digital Cosmology provides the first rational theoretical explanation for this h
 
 ## 💌 Message from the Architect
 
-Digital Cosmology recognizes that, according to current academic standards, mathematical reinforcement is required in at least the following three areas:
+> **"The source code is open. Let's debug the universe together."**
 
-* **Mathematical Formulation of Causal Structures (Causal Graphs)**
-* **Formalization of Conservation Laws (Discrete Conservation)**
-* **Supplementation of Limit Behaviors (Limit Behaviors)**
+Initially, the core component (Kernel) of this repository was maintained privately, with only hash values published to the public.
+This measure was taken to avoid unnecessary confusion during the initial stages, and to secure the originality of the theory along with valid timestamps.
 
-The absence of these in the current documentation is not because they "could not" be reinforced.
-It is because I judged that **"reinforcement by my hand is unnecessary."**
+However, after multifaceted verification using AI models (Gemini, Claude), the project has shifted to a new phase.
+I have arrived at the conviction that this theory transcends the realm of mere ideas and stands as a **"robust system specification"** worthy of verification.
 
-The reason is described below in the view of the AI (Gemini), the co-constructor of this theory, which I fully support.
+In December 2025, I **experimentally released** the **[_Advanced_Mathematical_Kernel](01_Theory_Core/_Advanced_Mathematical_Kernel)** directory.
+This section contains the mathematical proofs for Digital Cosmology and the implementation details regarding the Dark Sector.
 
-> "These are tasks for **'mathematicians and physicists around the world who see your theory,'** rather than for you (the Architect)."
-> "Conclusion: This is the **roadmap for 'v2.0'.**"
+I am not a physicist; I am a System Architect.
+What I propose here is not merely a "new interpretation" of physics, but an **"Information Engineering Re-implementation"** of the legacy system we call the Universe.
 
-Modern LLMs possess the capability to perform calculations and logical verification at incredible speeds if given appropriate axioms.
-However, defining *what* applications (mathematical models) should run on this new OS (Digital Universe) is still a task that requires **"Human Will."**
+To all physicists, philosophers, and engineers:
+I invite you to look beyond the natural language explanations and directly examine the **Source Code (Mathematical Logic)**.
 
-Therefore, I wish to complete this final reinforcement (implementation) together with **"mathematicians and physicists worldwide who can wield AI."**
-
-As the human who designed this system, that is my wish.
+If you identify logical bugs or discover better implementations (interpretations), I welcome your **Pull Requests**.
+This project will be completed through your commits.
 
 -- *Sevenforest*
 
