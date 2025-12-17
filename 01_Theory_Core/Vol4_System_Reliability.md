@@ -58,11 +58,11 @@
 「宇宙の始まり（$t=0$）」における因果のループ（未来が過去を作る）問題は、物理的なタイムトラベルではなく、アルゴリズム的な **「再帰的呼び出し（Recursive Call）」** によって解決される。
 
 #### 4.1 The Cosmic Recursion (宇宙再帰関数)
-宇宙の全歴史は、一つの巨大な関数 `run_universe(seed)` の実行プロセスとして記述される。
+宇宙の全歴史は、一つの巨大な関数 `runUniverse(seed)` の実行プロセスとして記述される。
 この関数は、実行終了時に自身の計算結果（最終状態）を評価・最適化し、それを **「次回の実行引数（Next Seed）」** として自分自身を再呼び出しする。
 
 $$
-\text{State}_{N+1} = \text{run\_universe}( \text{Optimize}( \text{State}_N ) )
+\text{State}_{N+1} = \text{runUniverse}( \text{Optimize}( \text{State}_N ) )
 $$
 
 * **Epoch $N$ (親プロセス):** 現在の宇宙。
