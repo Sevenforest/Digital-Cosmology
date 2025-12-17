@@ -89,7 +89,9 @@ AIは「論理的整合性」や「革新性」よりも、「査読の有無」
 | **`01_Theory_Core/`** | **[仕様書] 宇宙のカーネル定義 (論文)** |
 | ├── `Vol1_Time_Non_Realism.md` | 基礎編: エネルギー保存則による「時間の遅れ」の再定義（ラグとしての相対論）。 |
 | ├── `Vol2_Digital_Cosmology.md` | 核心編: 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
-| └── `Vol3_System_Architecture.md` | システム編: ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
+| ├── `Vol3_System_Architecture.md` | システム編: ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
+| ├── `Vol4_System_Reliability.md` | **運用編: 重力スロットリングとシャーディングによるシステムの信頼性工学。** |
+| └── `_Advanced_Mathematical_Kernel/` | **[詳細] 数理カーネル仕様書** <br> `Kernel_01`: 離散的因果構造の定義。<br> `Kernel_02`: ホログラフィック原理と拡張スケーリング則。 |
 | **`02_Implementation_Code/`** | **[実装] 実証コードと数理モデル** |
 | ├── `Appendix_SourceCode.md` | 技術補遺: 理論の数学的記述とPython実装のソースコード。 |
 | └── `Simulation_Redshift.ipynb` | 実証ログ: 不感帯の可視化および、観測ノイズに対する感度解析コード。 |

@@ -90,7 +90,9 @@ We have deployed a web application that allows you to experience the "Dead Zone 
 | **`01_Theory_Core/`** | **[Spec] Kernel Definitions (Papers)** |
 | ├── `Vol1_Time_Non_Realism.md` | Foundation: Redefining "Time Dilation" via Energy Conservation. |
 | ├── `Vol2_Digital_Cosmology.md` | Core Logic: Database interpretation of wave functions and resolution of paradoxes. |
-| └── `Vol3_System_Architecture.md` | Architecture: Explaining Dark Matter/Energy as "Metadata & Scaling". |
+| ├── `Vol3_System_Architecture.md` | Architecture: Explaining Dark Matter/Energy as "Metadata & Scaling". |
+| ├── `Vol4_System_Reliability.md` | **Reliability: System reliability engineering via Gravitational Throttling and Sharding.** |
+| └── `_Advanced_Mathematical_Kernel/` | **[Advanced] Mathematical Kernel Specifications** <br> `Kernel_01`: Definitions of discrete causal structures.<br> `Kernel_02`: Holographic principles and scaling laws. |
 | **`02_Implementation_Code/`** | **[Implementation] Proof of Concept & Models** |
 | ├── `Appendix_SourceCode.md` | Tech Appendix: Mathematical description and Python implementation. |
 | └── `Simulation_Redshift.ipynb` | Execution Log: Visualization of the Dead Zone and Sensitivity Analysis. |
