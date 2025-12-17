@@ -91,92 +91,86 @@ $$\text{Gravity } G \propto \text{Processing Lag (処理遅延)}$$
 ```mermaid
 graph TD
     %% ==========================================
-    %% 1. ノードとサブグラフの定義（配置優先）
+    %% Digital Cosmology Architecture v2.1 (Fix)
+    %% Reviewed by: Claude & Gemini
     %% ==========================================
 
-    subgraph "宇宙システム"
+    subgraph "Meta-Structure (The Recursion)"
+        Epoch_N_minus_1["Epoch N-1: Previous Universe"]
+        Epoch_N["Epoch N: Current Universe"]
+        Epoch_N_plus_1["Epoch N+1: Next Universe"]
+
+        Epoch_N_minus_1 -->|Seed Injection<br>return next_params| Epoch_N
+        Epoch_N -->|Optimization<br>return next_params| Epoch_N_plus_1
+    end
+
+    subgraph "Epoch N: Runtime System"
         direction TB
 
-        subgraph "コア・カーネル（駆動部）"
-            Clock[システムクロック / 論理ステップ]
+        subgraph "Reliability Layer (Non-Functional Req)"
+            Throttle["Throttling / 重力<br>Locally Slow"]
+            Shard["Sharding / ビッグリップ<br>Globally Partitioned"]
+            Bootstrap["Bootstrap / 世代交代<br>Cyclic Evolution"]
         end
 
-        subgraph "バックエンド処理（物理エンジン）"
-            Process[状態遷移ユニット]
-            
-            subgraph "バリオン物質層（レンダリング対象）"
-                direction TB
-                Env[一般物質 / 環境]
-                Body[アバター / 身体センサー]
-            end
-            
-            DM[ダークマター / 空間インデックス]
-            G[重力 / CPUレイテンシ]
+        subgraph "Kernel & Physics"
+            Clock[System Clock]
+            Process[State Transition Unit]
+            DM["Dark Matter<br>Graph Edge Cost (27%)"]
+            DE["Dark Energy<br>Heap Expansion (68%)"]
         end
 
-        subgraph "メモリ & ストレージ（統合ヒープ領域）"
-            DE[ダークエネルギー / ヒープ領域]
-            Log[イミュータブル・ログ<br>確定した歴史]
-            CMB[CMB / 高エントロピー廃熱]
+        subgraph "User Space (Frontend)"
+            Baryon["Baryonic Matter (5%)<br>Node Data"]
+            Consc["Consciousness<br>Log Reader"]
+        end
+        
+        subgraph "Storage (Backend)"
+            Log[Immutable History Log]
+            CMB["Garbage Collection / Heat"]
         end
     end
 
-    subgraph "クライアントサイド（観測者）"
-        Consc[意識 / リーダー<br>読み手]
-    end
-
-    %% アラート
-    Alert[システム警告: サーバーはヘッドレスモードで自律稼働中]
-
     %% ==========================================
-    %% 2. 接続定義（描画順序の制御）
+    %% Connections
     %% ==========================================
 
-    %% 内部プロセス
-    Clock -->|トリガー| Process
-    Process <--->|物理的相互作用| Env
-    Process <--->|物理的相互作用| Body
-    
-    %% ダークマター関連
-    DM -->|グラフ探索コスト| G
-    Process -.->|クエリ経路| DM
+    %% Bootstrap Logic
+    Bootstrap -->|Init| Clock
+    Epoch_N_minus_1 -.-> Bootstrap
 
-    %% メモリ・ログ関連
-    DE -->|オートスケーリング| Log
-    Process -->|状態のコミット| Log
-    Log -->|ガベージコレクション| CMB
+    %% Reliability Logic
+    Throttle -->|Limit Load| Process
+    Shard -->|Scale Out| DE
 
-    %% ------------------------------------------
-    %% 意識との接続
-    %% ------------------------------------------
-    
-    %% 1. SELECT権限（許可）
-    Log == "SQL: SELECT * FROM Log<br>（想起 / データ抽出）" ==> Consc
+    %% Core Process
+    Clock --> Process
+    Process -->|Write| Log
+    Process <-->|Interaction| Baryon
+    Process -.->|Routing Cost| DM
 
-    %% 2. INSERT/UPDATE権限（禁止）
-    Consc -.->|書き込み権限なし<br>Error: 403 Forbidden| Log
+    %% Resource Management
+    DE -->|Alloc| Log
+    Log -->|GC| CMB
     
-    %% 3. EXECUTE権限（禁止）
-    Consc -.->|介入不可<br>Timeout| Process
+    %% User Interaction
+    Log == "SQL: SELECT (Recall)" ==> Consc
+    Consc -.->|No Write Access| Log
 
     %% ==========================================
-    %% 3. スタイル定義
+    %% Styles
     %% ==========================================
     
-    style Clock fill:#f96,stroke:#333,stroke-width:2px
-    style Process fill:#9cf,stroke:#333,stroke-width:2px
-    style Body fill:#ccf,stroke:#333,stroke-width:2px
-    style Env fill:#ccf,stroke:#333,stroke-width:2px
+    style Epoch_N fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+    style Epoch_N_minus_1 fill:#eee,stroke:#999
+    style Epoch_N_plus_1 fill:#eee,stroke:#999
+    
+    style Reliability Layer fill:#eef,stroke:#33a,stroke-width:2px
+    style Throttle fill:#fdd,stroke:#333
+    style Shard fill:#fdd,stroke:#333
+    style Bootstrap fill:#fdd,stroke:#333
+
+    style Process fill:#9cf,stroke:#333
     style Log fill:#fff,stroke:#333,stroke-width:4px
     style Consc fill:#ff9,stroke:#333,stroke-width:4px
-    style Alert fill:#fdd,stroke:#f00,stroke-width:2px,stroke-dasharray: 5 5
-    
-    %% linkStyleのインデックスは「矢印の定義順」に依存するため
-    %% 上記の記述順序に合わせて再計算：
-    %% 0:Clock->Process, 1:Proc<->Env, 2:Proc<->Body, 3:DM->G, 4:Proc->DM
-    %% 5:DE->Log, 6:Proc->Log, 7:Log->CMB, 
-    %% 8:Log=>Consc, 9:Consc->Log(403), 10:Consc->Process(Timeout)
-    
-    %% なので、9番目と10番目の線を赤くする
-    linkStyle 9,10 stroke:red,stroke-width:2px,stroke-dasharray: 3 3;
 ```

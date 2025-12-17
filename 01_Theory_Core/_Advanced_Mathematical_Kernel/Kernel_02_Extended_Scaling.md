@@ -1,4 +1,4 @@
-# Vol.4 Addendum: Extended Formalism (v2.5)
+# Mathematical Kernel Specification v1.1: Extended Scaling / Dependency: Kernel_01
 ## Entropic Gravity, Topological Mass, and Dynamic Scaling
 
 **Date:** 2025-12-09

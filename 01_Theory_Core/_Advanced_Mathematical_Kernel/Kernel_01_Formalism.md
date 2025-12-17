@@ -1,4 +1,4 @@
-# Vol.4 Mathematical Formalism: The Kernel Specifications
+# Mathematical Kernel Specification v1.0: Discrete Foundations
 ## Digital Cosmology: Discrete Foundations and Continuum Limits
 
 **Date:** 2025-12-07
