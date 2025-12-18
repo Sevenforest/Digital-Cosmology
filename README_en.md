@@ -92,10 +92,11 @@ We have deployed a web application that allows you to experience the "Dead Zone 
 | ├── `Vol2_Digital_Cosmology.md` | Core Logic: Database interpretation of wave functions and resolution of paradoxes. |
 | ├── `Vol3_System_Architecture.md` | Architecture: Explaining Dark Matter/Energy as "Metadata & Scaling". |
 | ├── `Vol4_System_Reliability.md` | **Reliability: System reliability engineering via Gravitational Throttling and Sharding.** |
-| └── `_Advanced_Mathematical_Kernel/` | **[Advanced] Mathematical Kernel Specifications** <br> `Kernel_01`: Definitions of discrete causal structures.<br> `Kernel_02`: Holographic principles and scaling laws. |
+| └── `_Advanced_Mathematical_Kernel/` | **[Advanced] Mathematical Kernel Specifications** <br> `Kernel_01`: Definitions of discrete causal structures.<br> `Kernel_02`: Holographic principles and scaling laws.<br> `Kernel_03`: **[New]** Asynchronous Dual Clock Architecture and the Hierarchy of Time. |
 | **`02_Implementation_Code/`** | **[Implementation] Proof of Concept & Models** |
 | ├── `Appendix_SourceCode.md` | Tech Appendix: Mathematical description and Python implementation. |
-| └── `Simulation_Redshift.ipynb` | Execution Log: Visualization of the Dead Zone and Sensitivity Analysis. |
+| ├── `Simulation_Redshift.ipynb` | Execution Log: Visualization of the Dead Zone and Sensitivity Analysis. |
+| └── `kernel_03_verification.ipynb` | **[New] Kernel_03 Verification Notebook**<br>Proof of Concept (PoC) simulation mathematically demonstrating that asynchronous dual-clock (gravity lag) functions as a binding force (Dark Matter effect) for galaxies. |
 | **`03_Verification_Logs/`** | **[Audit] Verification & Stress Tests** |
 | ├── `Theoretical_Stress_Test.md` | Stress Test: Dialogue log demonstrating robustness against skepticism. |
 | ├── `VERIFICATION_LOG.md` | History: Verification log by an independent AI instance. |
@@ -103,7 +104,8 @@ We have deployed a web application that allows you to experience the "Dead Zone 
 | **`04_Future_Experiments/`** | **[Proposal] Experimental Protocols** |
 | └── `Experiment_Proposal.md` | RFC: Concrete protocols to detect the "Dead Zone" using Optical Lattice Clocks. |
 | **`05_Interactive_Lab/`** | **[Experience] Web Application** |
-| └── `app.py` | Streamlit: Source code for the browser-based theory simulator. |
+| ├── `app.py` | Streamlit: Source code for the browser-based theory simulator. |
+| └── `app_gravity.py` | **[New] Gravity Lag Lab**<br>A web application to visually experiment with the effects of gravity potential update lag. Verify how galaxies maintain their shape without collapsing by adjusting the lag interval. |
 | **`docs/`** | **[Guide] General Introduction** |
 
 ## 🧪 Key Findings / Predictions

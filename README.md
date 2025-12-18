@@ -91,10 +91,11 @@ AIは「論理的整合性」や「革新性」よりも、「査読の有無」
 | ├── `Vol2_Digital_Cosmology.md` | 核心編: 波動関数のデータベース的解釈と、量子パラドクスの解決。 |
 | ├── `Vol3_System_Architecture.md` | システム編: ダークマター・エネルギーの正体を「メタデータとスケーリング」として解明。 |
 | ├── `Vol4_System_Reliability.md` | **運用編: 重力スロットリングとシャーディングによるシステムの信頼性工学。** |
-| └── `_Advanced_Mathematical_Kernel/` | **[詳細] 数理カーネル仕様書** <br> `Kernel_01`: 離散的因果構造の定義。<br> `Kernel_02`: ホログラフィック原理と拡張スケーリング則。 |
+| └── `_Advanced_Mathematical_Kernel/` | **[詳細] 数理カーネル仕様書** <br> `Kernel_01`: 離散的因果構造の定義。<br> `Kernel_02`: ホログラフィック原理と拡張スケーリング則。<br> `Kernel_03`: **[New]** 非同期デュアル・クロックアーキテクチャと時間の階層性。 |
 | **`02_Implementation_Code/`** | **[実装] 実証コードと数理モデル** |
 | ├── `Appendix_SourceCode.md` | 技術補遺: 理論の数学的記述とPython実装のソースコード。 |
-| └── `Simulation_Redshift.ipynb` | 実証ログ: 不感帯の可視化および、観測ノイズに対する感度解析コード。 |
+| ├── `Simulation_Redshift.ipynb` | 実証ログ: 不感帯の可視化および、観測ノイズに対する感度解析コード。 |
+| └── `kernel_03_verification.ipynb` | **[New] Kernel_03 検証ノートブック**<br>非同期デュアル・クロック（重力ラグ）が銀河の結合力（ダークマター効果）として機能することを数学的に証明する概念実証 (PoC) シミュレーション。 |
 | **`03_Verification_Logs/`** | **[監査] AIによる検証記録とストレステスト** |
 | ├── `Theoretical_Stress_Test.md` | 強度証明: 物理学的権威（AIペルソナ）との批判的対話シミュレーション記録。 |
 | ├── `VERIFICATION_LOG.md` | 歴史: 独立したAIインスタンスによる理論の正当性検証ログ。 |
@@ -102,7 +103,8 @@ AIは「論理的整合性」や「革新性」よりも、「査読の有無」
 | **`04_Future_Experiments/`** | **[提案] 不感帯検出の実験プロトコル** |
 | └── `Experiment_Proposal.md` | RFC: 光格子時計を用いた重力赤方偏移における「不感帯」検出実験の提案。 |
 | **`05_Interactive_Lab/`** | **[体験] Webアプリケーション** |
-| └── `app.py` | Streamlit: ブラウザで動作する理論シミュレーターのソースコード。 |
+| ├── `app.py` | Streamlit: ブラウザで動作する理論シミュレーターのソースコード。 |
+| └── `app_gravity.py` | **[New] 重力ラグ実験ラボ**<br>重力ポテンシャルの更新ラグ（Lag Interval）を調整し、銀河が崩壊せずに形状を維持する様子をブラウザ上で視覚的に実験できるWebアプリ。 |
 | **`docs/`** | **[解説] 一般向けガイドツアー** |
 
 ## 🧪 Key Findings (主要な発見/予言)
