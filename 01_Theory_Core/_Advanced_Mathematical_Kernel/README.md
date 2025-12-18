@@ -14,10 +14,10 @@
 
 ## Modules
 
-* **[Vol.4 Mathematical Formalism](Vol4_Mathematical_Formalism.md)**:
+* **[Kernel_01_Formalism](Kernel_01_Formalism.md)**:
     * Defining Causal Sets & Discrete Conservation Laws.
     * Deriving Schrödinger equation as a continuum limit approximation.
-* **[Vol.4 Addendum: Extended Formalism](Vol4_Addendum_Extended_Formalism.md)**:
+* **[Kernel_02_Extended_Scaling](Kernel_02_Extended_Scaling.md)**:
     * Formulating Dark Energy as Heap Expansion.
     * Defining Redshift Dead Zone via Information Thermodynamics.
 
