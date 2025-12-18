@@ -4,7 +4,6 @@
 **Date:** 2025-12-07
 **Author:** Sevenforest (Concept Architect)
 **Implementation:** Gemini (Technical Writer)
-**Status:** Confidential (Local Archive Only)
 
 ---
 
@@ -28,7 +27,7 @@
 $$\mathcal{U} = (E, \prec)$$
 
 * $E$: 離散的なイベント（演算処理）の集合（Events）。
-* $\prec$: 半順序関係（Partial Order）。$x \prec y$ は「イベント $x$ がイベント $y$ の原因である（入力となっている）」ことを示す。
+* $\prec$: 半順序関係（Partial Order）。 $x \prec y$ は「イベント $x$ がイベント $y$ の原因である（入力となっている）」ことを示す。
 
 この関係は以下の公理（DAG: 有向非巡回グラフの性質）を満たす。
 
@@ -58,7 +57,7 @@ $$\tau(x, y) = \kappa \cdot \max \{ L(\gamma) \mid \gamma \text{ is a chain from
 代わりに、セル・オートマトンにおける **「可逆性（Reversibility）」** と **「情報保存（Information Conservation）」** を用いてエネルギー保存則を再定義する。
 
 ### 3.1 State Evolution (状態遷移)
-宇宙の全状態（Global State）を $|\Psi_n\rangle$ とする（$n \in \mathbb{N}$ は離散的ステップ）。
+宇宙の全状態（Global State）を $|\Psi_n\rangle$ とする（ $n \in \mathbb{N}$ は離散的ステップ）。
 時間発展演算子（Hamiltonian Operator）を $\hat{U}$ とすると：
 
 $$|\Psi_{n+1}\rangle = \hat{U} |\Psi_n\rangle$$
