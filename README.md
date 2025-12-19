@@ -9,18 +9,18 @@
 
 ---
 
-> [!WARNING]
-> **Status Update (2025/12/19): Calculation Error Identified**
-> 
-> We have identified a significant error in the statistical calculation (specifically regarding the P-value and effective sample size) reported in v5.0.0.
-> The claim of "$P < 10^{-89}$" was overstated due to a bug in the dependency handling of the dataset.
-> 
-> **We are currently retracting the "confirmed" status and re-verifying the code.**
-> Please treat the current results as experimental/alpha until the patch is released.
-> 
-> (現在、統計計算に重大なミス（P値の過小評価）が見つかったため、結果を再検証中です。確定的な発見という主張は一度取り下げています。)
+# 🚫 [Disproven] 72km/s Quantization Hypothesis
+
+> [!NOTE]
+> **Conclusion (2025/12/19):**
+> Rigorous Monte Carlo testing has revealed that the 72km/s signal is **statistically insignificant (P ~ 0.8)**.
+> The initial "discovery" was an artifact caused by cosmic clustering and sample correlation.
+> This repository now serves as a case study in statistical validation errors.
 
 ---
+
+<details>
+<summary>🚫 【棄却済み】過去の仮説と検証データ (v5.0.0) - クリックで展開</summary>
 
 ## 🚨 最新の検証結果 (2025.12.19)
 SDSS銀河ペアデータ ($N=8,226$) の解析により、相対速度差における **72km/s の量子化** を検出しました。
@@ -41,6 +41,7 @@ SDSS銀河ペアデータ ($N=8,226$) の解析により、相対速度差にお
     * **The Corrected Sniper:** 精度チェック機能を搭載し、丸め誤差を排除する改良版。
     * **The Binary Probe:** 最終的に $10^{-89}$ を検出した、銀河ペア解析用コード。
 
+</details>
 ---
 
 ### 📢 Author's Manifesto: The Definition of "Everything"
