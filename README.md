@@ -9,6 +9,19 @@
 
 ---
 
+> [!WARNING]
+> **Status Update (2025/12/19): Calculation Error Identified**
+> 
+> We have identified a significant error in the statistical calculation (specifically regarding the P-value and effective sample size) reported in v5.0.0.
+> The claim of "$P < 10^{-89}$" was overstated due to a bug in the dependency handling of the dataset.
+> 
+> **We are currently retracting the "confirmed" status and re-verifying the code.**
+> Please treat the current results as experimental/alpha until the patch is released.
+> 
+> (現在、統計計算に重大なミス（P値の過小評価）が見つかったため、結果を再検証中です。確定的な発見という主張は一度取り下げています。)
+
+---
+
 ## 🚨 最新の検証結果 (2025.12.19)
 SDSS銀河ペアデータ ($N=8,226$) の解析により、相対速度差における **72km/s の量子化** を検出しました。
 偶然発生する確率は **$P < 10^{-89}$** です。
