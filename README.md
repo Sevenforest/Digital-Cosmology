@@ -25,7 +25,7 @@ SDSS銀河ペアデータ ($N=8,226$) の解析により、相対速度差にお
 
 * **`analysis_notebook.ipynb`**:
     * **The Universal Key (万能鍵):** あらゆるカタログから速度データを無差別に抽出する初期プロトコル。
-    * **The Precision Sniper:** 精度チェック機能を搭載し、丸め誤差を排除する改良版。
+    * **The Corrected Sniper:** 精度チェック機能を搭載し、丸め誤差を排除する改良版。
     * **The Binary Probe:** 最終的に $10^{-89}$ を検出した、銀河ペア解析用コード。
 
 ---

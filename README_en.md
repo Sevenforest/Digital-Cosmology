@@ -24,7 +24,7 @@ These are the Python scripts used to reach this discovery. Early exploration cod
 
 * **`analysis_notebook.ipynb`**:
     * **The Universal Key:** Initial protocol to indiscriminately extract velocity data from any catalog.
-    * **The Precision Sniper:** Improved version equipped with precision checks to eliminate rounding artifacts.
+    * **The Corrected Sniper:** Improved version equipped with precision checks to eliminate rounding artifacts.
     * **The Binary Probe:** Galaxy pair analysis code that finally detected the $10^{-89}$ signal.
 
 ---
