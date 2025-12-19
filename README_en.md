@@ -9,6 +9,19 @@
 
 ---
 
+> [!WARNING]
+> **Status Update (2025/12/19): Calculation Error Identified**
+> 
+> We have identified a significant error in the statistical calculation (specifically regarding the P-value and effective sample size) reported in v5.0.0.
+> The claim of "$P < 10^{-89}$" was overstated due to a bug in the dependency handling of the dataset.
+> 
+> **We are currently retracting the "confirmed" status and re-verifying the code.**
+> Please treat the current results as experimental/alpha until the patch is released.
+> 
+> (現在、統計計算に重大なミス（P値の過小評価）が見つかったため、結果を再検証中です。確定的な発見という主張は一度取り下げています。)
+
+---
+
 ## 🚨 Latest Verification Results (Dec 19, 2025)
 Analysis of SDSS galaxy pair data ($N=8,226$) has detected a **72 km/s quantization** in relative velocity differences.
 The probability of this occurring by chance is **$P < 10^{-89}$**.
