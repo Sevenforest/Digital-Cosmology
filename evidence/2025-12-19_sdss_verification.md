@@ -1,3 +1,11 @@
+# 🚫 [Disproven] 72km/s Quantization Hypothesis
+
+> [!NOTE]
+> **Conclusion (2025/12/19):**
+> Rigorous Monte Carlo testing has revealed that the 72km/s signal is **statistically insignificant (P ~ 0.8)**.
+> The initial "discovery" was an artifact caused by cosmic clustering and sample correlation.
+> This repository now serves as a case study in statistical validation errors.
+
 # 📑 観測報告：SDSS銀河ペアにおける72km/s量子化の検出
 
 **Date:** 2025-12-19  
