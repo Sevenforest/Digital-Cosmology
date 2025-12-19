@@ -9,19 +9,18 @@
 
 ---
 
-> [!WARNING]
-> **Status Update (2025/12/19): Calculation Error Identified**
-> 
-> We have identified a significant error in the statistical calculation (specifically regarding the P-value and effective sample size) reported in v5.0.0.
-> The claim of "$P < 10^{-89}$" was overstated due to a bug in the dependency handling of the dataset.
-> 
-> **We are currently retracting the "confirmed" status and re-verifying the code.**
-> Please treat the current results as experimental/alpha until the patch is released.
-> 
-> (現在、統計計算に重大なミス（P値の過小評価）が見つかったため、結果を再検証中です。確定的な発見という主張は一度取り下げています。)
+# 🚫 [Disproven] 72km/s Quantization Hypothesis
+
+> [!NOTE]
+> **Conclusion (2025/12/19):**
+> Rigorous Monte Carlo testing has revealed that the 72km/s signal is **statistically insignificant (P ~ 0.8)**.
+> The initial "discovery" was an artifact caused by cosmic clustering and sample correlation.
+> This repository now serves as a case study in statistical validation errors.
 
 ---
 
+<details>
+<summary>🚫 [Disproven] Original Hypothesis and Data (v5.0.0) - Click to expand</summary>
 ## 🚨 Latest Verification Results (Dec 19, 2025)
 Analysis of SDSS galaxy pair data ($N=8,226$) has detected a **72 km/s quantization** in relative velocity differences.
 The probability of this occurring by chance is **$P < 10^{-89}$**.
@@ -40,6 +39,7 @@ These are the Python scripts used to reach this discovery. Early exploration cod
     * **The Corrected Sniper:** Improved version equipped with precision checks to eliminate rounding artifacts.
     * **The Binary Probe:** Galaxy pair analysis code that finally detected the $10^{-89}$ signal.
 
+</details>
 ---
 
 ### 📢 Author's Manifesto: The Definition of "Everything"
