@@ -9,37 +9,16 @@
 
 ---
 
-# 🚫 [Disproven] 72km/s Quantization Hypothesis
+### ⚠️ [Status Update: Unverifiable] 72km/s Quantization Hypothesis
+**Update 2025/12/20:**
+Our initial investigation suggested that the 72km/s signal was statistically insignificant (P ~ 0.8) based on SDSS/ALFALFA catalogs.
+However, a subsequent deep-dive analysis (see `evidence/2025-12-20-catalog-smoothing-analysis.md`) revealed a critical flaw in this approach:
 
-> [!NOTE]
-> **Conclusion (2025/12/19):**
-> Rigorous Monte Carlo testing has revealed that the 72km/s signal is **statistically insignificant (P ~ 0.8)**.
-> The initial "discovery" was an artifact caused by cosmic clustering and sample correlation.
-> This repository now serves as a case study in statistical validation errors.
+1.  **Smoothing:** Public catalogs use weighted averages (barycenters), which "smear out" the sharp spectral peaks (kinematic centers) that Tifft originally targeted.
+2.  **Resolution Limit:** Even in comparative verification where smoothing was intentionally applied, a non-negligible discrepancy between catalog values and raw data peaks was confirmed ($\sigma \approx 8$ km/s, outliers > 20 km/s). This error is large enough to mathematically erase the 24/36 km/s quantization signals.
 
----
+**Conclusion:** The hypothesis cannot be validly tested using standard public catalogs. The absence of evidence in catalogs is an expected result of data processing algorithms, not a proof of absence. True verification requires raw spectral re-analysis.
 
-<details>
-<summary>🚫 [Disproven] Original Hypothesis and Data (v5.0.0) - Click to expand</summary>
-## 🚨 Latest Verification Results (Dec 19, 2025)
-Analysis of SDSS galaxy pair data ($N=8,226$) has detected a **72 km/s quantization** in relative velocity differences.
-The probability of this occurring by chance is **$P < 10^{-89}$**.
-
-![72km/s Evidence Graph](./evidence/proof_graph_72kms.png)
-*(Fig: Signal with 72 km/s periodicity [blue dots] significantly deviating from the random noise tolerance range [red band])*
-
-[👉 Detailed Analysis Report and Reproduction Code Here](./evidence/)
-
-## 🛠️ Tools & Protocols
-
-These are the Python scripts used to reach this discovery. Early exploration code is included as is, serving as a log of trial and error.
-
-* **`analysis_notebook.ipynb`**:
-    * **The Universal Key:** Initial protocol to indiscriminately extract velocity data from any catalog.
-    * **The Corrected Sniper:** Improved version equipped with precision checks to eliminate rounding artifacts.
-    * **The Binary Probe:** Galaxy pair analysis code that finally detected the $10^{-89}$ signal.
-
-</details>
 ---
 
 ### 📢 Author's Manifesto: The Definition of "Everything"

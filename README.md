@@ -9,39 +9,16 @@
 
 ---
 
-# 🚫 [Disproven] 72km/s Quantization Hypothesis
+### ⚠️ [Status Update: Unverifiable] 72km/s Quantization Hypothesis
+**2025/12/20 追記:**
+SDSS/ALFALFAカタログに基づいた当初の調査では、72km/sのシグナルは統計的に有意ではない（P ~ 0.8）と示唆されました。
+しかし、その後の詳細な深掘り解析（`evidence/2025-12-20-catalog-smoothing-analysis.md` 参照）により、このアプローチにおける致命的な欠陥が明らかになりました：
 
-> [!NOTE]
-> **Conclusion (2025/12/19):**
-> Rigorous Monte Carlo testing has revealed that the 72km/s signal is **statistically insignificant (P ~ 0.8)**.
-> The initial "discovery" was an artifact caused by cosmic clustering and sample correlation.
-> This repository now serves as a case study in statistical validation errors.
+1.  **平滑化 (Smoothing):** 公開カタログは加重平均（重心）を使用しており、ティフトが本来ターゲットとしていた鋭いスペクトルピーク（運動学的中心）を「塗りつぶして（smear out）」しまいます。
+2.  **解像度の限界:** 平滑化処理を適用した比較検証においてさえ、カタログ値と生データのピークとの間には無視できないズレ（ $\sigma \approx 8$ km/s, 外れ値 > 20 km/s ）が確認されました。この誤差は、24/36 km/sの量子化シグナルを数学的に消し去るのに十分な大きさです。
 
----
+**結論:** 標準的な公開カタログを使用してこの仮説を有効に検証することはできません。カタログにおける証拠の欠如（Absence of evidence）はデータ処理アルゴリズムによる予期された結果であり、不在の証明（Proof of absence）ではありません。真の検証には生のスペクトル再解析が必要です。
 
-<details>
-<summary>🚫 【棄却済み】過去の仮説と検証データ (v5.0.0) - クリックで展開</summary>
-
-## 🚨 最新の検証結果 (2025.12.19)
-SDSS銀河ペアデータ ($N=8,226$) の解析により、相対速度差における **72km/s の量子化** を検出しました。
-偶然発生する確率は **$P < 10^{-89}$** です。
-
-![72km/s Evidence Graph](./evidence/proof_graph_72kms.png)
-*(図: ランダムノイズの許容範囲[赤帯]を逸脱する、72km/s周期のシグナル[青点])*
-
-[👉 詳細な解析レポートと再現コードはこちら](./evidence/)
-
-## 🛠️ Tools & Protocols (解析ツール群)
-
-この発見に至るまでに使用されたPythonスクリプト群です。
-試行錯誤の履歴（Log）として、初期の探索コードもそのまま収録しています。
-
-* **`analysis_notebook.ipynb`**:
-    * **The Universal Key (万能鍵):** あらゆるカタログから速度データを無差別に抽出する初期プロトコル。
-    * **The Corrected Sniper:** 精度チェック機能を搭載し、丸め誤差を排除する改良版。
-    * **The Binary Probe:** 最終的に $10^{-89}$ を検出した、銀河ペア解析用コード。
-
-</details>
 ---
 
 ### 📢 Author's Manifesto: The Definition of "Everything"
