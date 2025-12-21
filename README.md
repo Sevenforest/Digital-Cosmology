@@ -9,6 +9,9 @@
 
 ---
 
+📢 For International Researchers / Scientists: If you are interested in the logical resolution of Redshift Quantization and the computational model of the universe, please see the for-scientists/ directory for English summaries and analysis.
+
+---
 ### ⚠️ [Status Update: Unverifiable] 72km/s Quantization Hypothesis
 **2025/12/20 追記:**
 SDSS/ALFALFAカタログに基づいた当初の調査では、72km/sのシグナルは統計的に有意ではない（P ~ 0.8）と示唆されました。
