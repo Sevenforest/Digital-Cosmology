@@ -1,6 +1,13 @@
 # Scientific Overview: Digital Cosmology
 ### A Unified Framework Reinterpreting Physical Laws as Computational Processes
 
+### New Evidence Data (2025-12-22)
+We have added new analysis data comparing SDSS Level 3 catalog values with Level 2 raw spectral peaks ( $N=292$ ). The following files provide the methodology, the source code, and the raw numerical results for verification.
+
+- **Report:** [ANALYSIS_LOG.md](../evidence/ANALYSIS_LOG.md)
+- **Code:** [analysis_notebook3.ipynb](../evidence/analysis_notebook3.ipynb)
+- **Dataset:** [sdss_analysis_results.csv](../evidence/sdss_analysis_results.csv)
+
 ## ⚡ Executive Summary
 Digital Cosmology is a non-standard unified theory that reinterprets the fundamental laws of physics as the operational logic of a discrete information processing system (a Graph-based State Machine). By shifting the paradigm from "continuous physical space" to "discrete state-machine processing," this model provides a logical resolution to long-standing paradoxes—including the conflict between General Relativity and Quantum Mechanics—and offers a mathematical basis for anomalies often dismissed by standard models, such as **Tifft's Redshift Quantization**.
 
