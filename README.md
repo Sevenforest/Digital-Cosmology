@@ -12,6 +12,9 @@
 📢 For International Researchers / Scientists: If you are interested in the logical resolution of Redshift Quantization and the computational model of the universe, please see the for-scientists/ directory for English summaries and analysis.
 
 ---
+## サンプル数 N=1000 規模の大規模解析実施
+**2025/12/24 追記:**
+解析結果および監査データは ./evidence/N1000/ に格納済み。
 
 ## 🛡 [Status Update: Verified] by Autonomous Logic Audit (25-sigma Confidence)
 **2025/12/23 追記:**
@@ -87,6 +90,9 @@ AIは「論理的整合性」や「革新性」よりも、「査読の有無」
 * **時間非実在論:** 時間は物理的実体（次元）ではなく、エネルギー保存則に基づく「状態更新のカウンタ」に過ぎない。
 * **デジタル宇宙:** 宇宙は連続体ではなく、離散値（整数）で記述される計算機である。
 * **波動一元論の否定:** 波動関数は実在せず、粒子は決定論的に振る舞う。
+
+> **【論理的帰結：連続性の排除】**
+> 以上の公理は、物理実体における「連続性」の完全な排除を意味する。本理論において、主流派が前提とするアナログな連続体は、離散的な演算結果がもたらす統計的なイリュージョンに過ぎない。
 
 ### 2. 実装の導出 (Implementation by AI)
 著者が与えたベクトル（制約条件）に基づき、LLMは以下の論理的帰結（仕様）を導出した。

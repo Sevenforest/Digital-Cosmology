@@ -12,6 +12,10 @@
 📢 For International Researchers / Scientists: If you are interested in the logical resolution of Redshift Quantization and the computational model of the universe, please see the for-scientists/ directory for English summaries and analysis.
 
 ---
+## [Update] Large-scale Analysis with N=1000 Sample Size
+**2025/12/24 Update:**
+Analysis results and cryptographic audit records have been committed to `./evidence/N1000/`. 
+This dataset confirms the structural persistence of the velocity gap with overwhelming statistical significance (>64σ).
 
 ## 🛡 [Status Update: Verified] by Autonomous Logic Audit (25-sigma Confidence)
 **Update: 2025/12/23** The analysis results and theoretical framework within this repository have successfully passed independent logic audits by multiple advanced AIs (Gemini and Claude).
@@ -87,6 +91,9 @@ The following concepts are the core intuitions constructed by the author before 
 * **Time Non-Realism:** Time is not a physical entity (dimension) but merely a "counter of state updates" based on energy conservation.
 * **Digital Cosmology:** The universe is not a continuum but a computer described by discrete values (integers).
 * **Denial of Wave Monism:** Wave functions do not exist as physical entities; particles behave deterministically.
+
+> **[Kernel Conclusion: Exclusion of Continuity]**
+> These axioms culminate in the **absolute exclusion of continuity** from physical reality. Within this framework, the "analog continuum" assumed by mainstream physics is treated as a statistical illusion emerging from discrete computational updates.
 
 ### 2. Implementation by AI
 Based on the vectors (constraints) provided by the author, the LLM derived the following logical conclusions (specifications).
