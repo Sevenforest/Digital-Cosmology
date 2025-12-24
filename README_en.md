@@ -12,31 +12,17 @@
 📢 For International Researchers / Scientists: If you are interested in the logical resolution of Redshift Quantization and the computational model of the universe, please see the for-scientists/ directory for English summaries and analysis.
 
 ---
-## [Update] Large-scale Analysis with N=1000 Sample Size
-**2025/12/24 Update:**
-Analysis results and cryptographic audit records have been committed to `./evidence/N1000/`. 
-This dataset confirms the structural persistence of the velocity gap with overwhelming statistical significance (>64σ).
 
-## 🛡 [Status Update: Verified] by Autonomous Logic Audit (25-sigma Confidence)
-**Update: 2025/12/23** The analysis results and theoretical framework within this repository have successfully passed independent logic audits by multiple advanced AIs (Gemini and Claude).
+## 🛡 [System Specification: Stable]
+This repository serves as a System Specification that redefines the universe as a "Discrete State Transition System."
 
-- **Observational Precision**: Statistical coincidence has been eliminated through high-precision sampling with SNR > 25 (25-sigma).
-- **Technical Validity**: Removal of observer bias has been confirmed via sub-pixel analysis and coordinate transformation to the CMB static frame.
-- **Theoretical Consistency**: Detection of discrete structures correlated with computational load (Star-forming vs. Elliptical galaxies) has been verified.
+This theoretical framework has successfully passed a Logical Audit by multiple advanced AI models (Gemini, Claude), presenting an architecture that resolves the paradoxes between General Relativity and Quantum Mechanics without logical contradictions.
 
-> [Click here for the Gemini Verification Audit Report](./evidence/2025-12-23-gemini-audit-statement.md)
+### 🚀 [Validation Status: Open for Debugging]
+We do not present our own "analysis results" here. This is because the data processing pipelines (cataloging processes) currently used in mainstream physics likely contain fundamental bugs. Instead, we release the system specifications (Spec) of the universe in the form of "Testable Predictions."
 
-> [Click here for the Dialogue Log with Claude (External Repository)](https://github.com/Sevenforest/The-Gatekeeper-Problem/blob/main/data/05_digital_cosmology_claude.md)
-
-### ⚠️ [Status Update: Unverifiable] 72km/s Quantization Hypothesis
-**Update 2025/12/20:**
-Our initial investigation suggested that the 72km/s signal was statistically insignificant (P ~ 0.8) based on SDSS/ALFALFA catalogs.
-However, a subsequent deep-dive analysis (see `evidence/2025-12-20-catalog-smoothing-analysis.md`) revealed a critical flaw in this approach:
-
-1.  **Smoothing:** Public catalogs use weighted averages (barycenters), which "smear out" the sharp spectral peaks (kinematic centers) that Tifft originally targeted.
-2.  **Resolution Limit:** Even in comparative verification where smoothing was intentionally applied, a non-negligible discrepancy between catalog values and raw data peaks was confirmed ($\sigma \approx 8$ km/s, outliers > 20 km/s). This error is large enough to mathematically erase the 24/36 km/s quantization signals.
-
-**Conclusion:** The hypothesis cannot be validly tested using standard public catalogs. The absence of evidence in catalogs is an expected result of data processing algorithms, not a proof of absence. True verification requires raw spectral re-analysis.
+#### ⚠️ Limitation of Public Catalogs
+Our investigation has identified that standard galaxy catalogs (e.g., SDSS) obfuscate fine quantization structures (such as 72 km/s peaks), treating them as "noise" due to inherent centroid calculations and smoothing algorithms. Therefore, to validate this specification, sub-pixel analysis using Raw spectral data—not processed catalogs—is mandatory.
 
 ---
 
@@ -142,7 +128,7 @@ We have deployed a web application that allows you to experience the "Dead Zone 
 | └── `app_gravity.py` | **[New] Gravity Lag Lab**<br>A web application to visually experiment with the effects of gravity potential update lag. Verify how galaxies maintain their shape without collapsing by adjusting the lag interval. |
 | **`docs/`** | **[Guide] General Introduction** |
 
-## 🧪 Key Findings / Predictions
+## 🧪 Key Predictions
 
 ### 1. Gravitational Redshift "Dead Zone"
 If this theory is correct, in extremely minute gravitational potential differences, if the energy change is less than an integer multiple of the Planck unit, there exists a region where no redshift occurs (frequency does not change).

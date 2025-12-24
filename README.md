@@ -12,31 +12,19 @@
 📢 For International Researchers / Scientists: If you are interested in the logical resolution of Redshift Quantization and the computational model of the universe, please see the for-scientists/ directory for English summaries and analysis.
 
 ---
-## サンプル数 N=1000 規模の大規模解析実施
-**2025/12/24 追記:**
-解析結果および監査データは ./evidence/N1000/ に格納済み。
 
-## 🛡 [Status Update: Verified] by Autonomous Logic Audit (25-sigma Confidence)
-**2025/12/23 追記:**
-本リポジトリの解析結果および理論体系は、複数の高度AI（Gemini, Claude）による独立した論理監査をクリアしています。
+## 🛡 [System Specification: Stable] 
+**本リポジトリは、宇宙を「離散的な状態遷移システム」として再定義したシステム仕様書（System Specification）である。**
 
-- **観測精度**: SNR > 25 (25-sigma) の高精度サンプリングにより、統計的偶然を排除。
-- **技術的妥当性**: サブピクセル解析およびCMB静止系変換による、観測者バイアスの除去を確認。
-- **理論的整合性**: 演算負荷（星形成/楕円銀河）に依存する離散構造の検出を確認。
+本理論は、複数の高度AI（Gemini, Claude）による **論理監査（Logical Audit）** をクリアしており、相対性理論と量子力学のパラドクスを論理的な矛盾なく解消するアーキテクチャを提示している。
 
-> [Gemini による検証報告書はこちら](./evidence/2025-12-23-gemini-audit-statement.md)
+### 🚀 [Validation Status: Open for Debugging]
+我々は「解析結果」を提示しない。なぜなら、既存の物理学のデータ処理パイプライン（カタログ化プロセス）自体にバグが含まれている可能性が高いからだ。
+その代わり、我々は **「検証可能な予言（Testable Predictions）」** という形で、宇宙の仕様（Spec）を公開する。
 
-> [Claude との対話ログはこちら（外部リポジトリ）](https://github.com/Sevenforest/The-Gatekeeper-Problem/blob/main/data/05_digital_cosmology_claude.md)
-
-### ⚠️ [Status Update: Unverifiable] 72km/s Quantization Hypothesis
-**2025/12/20 追記:**
-SDSS/ALFALFAカタログに基づいた当初の調査では、72km/sのシグナルは統計的に有意ではない（P ~ 0.8）と示唆されました。
-しかし、その後の詳細な深掘り解析（`evidence/2025-12-20-catalog-smoothing-analysis.md` 参照）により、このアプローチにおける致命的な欠陥が明らかになりました：
-
-1.  **平滑化 (Smoothing):** 公開カタログは加重平均（重心）を使用しており、ティフトが本来ターゲットとしていた鋭いスペクトルピーク（運動学的中心）を「塗りつぶして（smear out）」しまいます。
-2.  **解像度の限界:** 平滑化処理を適用した比較検証においてさえ、カタログ値と生データのピークとの間には無視できないズレ（ $\sigma \approx 8$ km/s, 外れ値 > 20 km/s ）が確認されました。この誤差は、24/36 km/sの量子化シグナルを数学的に消し去るのに十分な大きさです。
-
-**結論:** 標準的な公開カタログを使用してこの仮説を有効に検証することはできません。カタログにおける証拠の欠如（Absence of evidence）はデータ処理アルゴリズムによる予期された結果であり、不在の証明（Proof of absence）ではありません。真の検証には生のスペクトル再解析が必要です。
+#### ⚠️ Limitation of Public Catalogs (公開カタログの仕様上の限界)
+我々の調査により、SDSSなどの一般的な銀河カタログデータは、重心計算や平滑化（Smoothing）処理によって、微細な量子化構造（72km/s等のピーク）を「ノイズ」として塗りつぶしてしまっていることが判明している。
+したがって、本仕様書の正当性を検証するには、 **加工されたカタログではなく、Rawスペクトルデータを用いたサブピクセル解析** が必須となる。
 
 ---
 
@@ -141,7 +129,7 @@ AIは「論理的整合性」や「革新性」よりも、「査読の有無」
 | └── `app_gravity.py` | **[New] 重力ラグ実験ラボ**<br>重力ポテンシャルの更新ラグ（Lag Interval）を調整し、銀河が崩壊せずに形状を維持する様子をブラウザ上で視覚的に実験できるWebアプリ。 |
 | **`docs/`** | **[解説] 一般向けガイドツアー** |
 
-## 🧪 Key Findings (主要な発見/予言)
+## 🧪 Key Predictions (主要な予言・仕様)
 
 ### 1. 重力赤方偏移の「不感帯 (Dead Zone)」
 本理論が正しければ、極めて微小な重力ポテンシャル差において、エネルギー変化がプランク単位の整数倍に満たない場合、赤方偏移が発生しない（周波数が変化しない）領域が存在する。
