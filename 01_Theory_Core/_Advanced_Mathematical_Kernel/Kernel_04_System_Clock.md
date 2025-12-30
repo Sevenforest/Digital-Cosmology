@@ -5,7 +5,7 @@
 **Date:** 2025-12-19
 **Author:** Sevenforest (Architect)
 **Implementation:** Gemini (Core Logic)
-**Dependency:** Kernel_02 (Extended Scaling), Vol.3 (System Architecture)
+**Dependency:** Kernel_02 (Discrete Gravity), Kernel_03 (Extended Scaling), Vol.3 (System Architecture)
 
 ---
 

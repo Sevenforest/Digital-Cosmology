@@ -1,4 +1,4 @@
-# Mathematical Kernel Specification v1.1: Extended Scaling / Dependency: Kernel_01
+# Mathematical Kernel Specification v1.1: Extended Scaling / Dependency: Kernel_01 Kernel_02
 ## Entropic Gravity, Topological Mass, and Dynamic Scaling
 
 **Date:** 2025-12-09
@@ -8,18 +8,18 @@
 
 ---
 
-## 6. Dynamic Scaling of Address Space (Dark Energy)
+## 1. Dynamic Scaling of Address Space (Dark Energy)
 
 Vol.3 で定義された「宇宙の加速膨張」を、ログデータの増大に伴うアドレス空間の動的割り当て（Dynamic Allocation）として数理的に記述する。
 
-### 6.1 Log Accumulation Law (ログ蓄積則)
+### 1.1 Log Accumulation Law (ログ蓄積則)
 宇宙の全情報量（Total Information Content） $I(t)$ は、過去の全イベントの累積として定義される。
 
 $$I(t) = \sum_{\tau=0}^{t} N_{events}(\tau)$$
 
 因果律により情報は削除されない（Immutable）ため、$\frac{dI}{dt} \geq 0$ は常に成立する。さらに、相互作用の複雑性が増すにつれて、単位時間あたりの生成情報量（イベント密度）も増大する傾向にある。
 
-### 6.2 Holographic Bound & Radius Expansion (ホログラフィック境界と半径拡張)
+### 1.2 Holographic Bound & Radius Expansion (ホログラフィック境界と半径拡張)
 ベッケンシュタイン境界およびホログラフィック原理により、ある領域が保持できる最大情報量 $I_{max}$ は、その境界表面積 $A$ に比例する（ $I_{max} \propto A \propto R^2$ ）。
 しかし、システム全体のストレージ容量（ 体積 $V$ ）として確保すべきアドレス空間は、蓄積された総情報量 $I(t)$ を格納するのに十分でなければならない。
 
@@ -37,11 +37,11 @@ $$\frac{d^2 a}{dt^2} > 0 \iff \frac{d^2 I}{dt^2} > 0$$
 
 ---
 
-## 7. Information Theoretic Redshift (不感帯の厳密化)
+## 2. Information Theoretic Redshift (不感帯の厳密化)
 
 重力赤方偏移における「不感帯（Dead Zone）」の発生メカニズムを、情報理論的な「ビット深度（Bit Depth）」の観点から定式化し、物理的根拠を与える。
 
-### 7.1 Minimum Bit Energy (最小ビットエネルギー)
+### 2.1 Minimum Bit Energy (最小ビットエネルギー)
 システムが状態 $S_n$ から $S_{n+1}$ へ遷移するためには、最低でも1ビットの情報量変化が必要である。
 ランダウアーの原理に基づき、この最小エネルギーコスト $E_{bit}$ を定義する。
 
@@ -49,7 +49,7 @@ $$E_{bit} = k_B T_{sys} \ln 2$$
 
 ここで $T_{sys}$ はシステムの等価演算温度である。
 
-### 7.2 Quantized Update Condition (量子化更新条件)
+### 2.2 Quantized Update Condition (量子化更新条件)
 重力ポテンシャル差 $\Delta\Phi$ によるエネルギーシフト $\Delta E_{grav}$ が、この $E_{bit}$ を下回る場合、状態遷移は情報の意味を持たず、システムによって棄却（Discard）される。
 
 **Update Condition:**
@@ -64,11 +64,11 @@ $$\Delta\nu = \nu_0 \cdot \text{sgn}(\Delta\Phi) \cdot \left\lfloor \frac{|\Delt
 
 ---
 
-## 8. Topological Mass (ダークマターのグラフ理論的定義)
+## 3. Topological Mass (ダークマターのグラフ理論的定義)
 
 「見えないが重力を持つ」ダークマターを、グラフ理論における「エッジコスト（接続コスト）」として定義する。
 
-### 8.1 Universe as a Weighted Graph (重み付きグラフとしての宇宙)
+### 3.1 Universe as a Weighted Graph (重み付きグラフとしての宇宙)
 宇宙グラフ $G = (V, E)$ において、全質量（全計算コスト） $M_{total}$ は、ノードコスト（物質）とエッジコスト（構造）の和である。
 
 $$M_{total} = \sum_{v \in V} w(v) + \sum_{e \in E} c(e)$$
@@ -76,7 +76,7 @@ $$M_{total} = \sum_{v \in V} w(v) + \sum_{e \in E} c(e)$$
 * **Baryonic Matter:** $M_{baryon} = \sum w(v)$ （ノードの重み＝粒子の質量）
 * **Dark Matter:** $M_{dark} = \sum c(e)$ （エッジのコスト＝空間構造の維持コスト）
 
-### 8.2 Spatial Index Overhead (空間インデックスのオーバーヘッド)
+### 3.2 Spatial Index Overhead (空間インデックスのオーバーヘッド)
 銀河団のような大規模構造（密なサブグラフ）を維持するためには、ノード間を結ぶエッジ（相互作用パス）の数が、ノード数の二乗オーダー（ $O(N^2)$ ）で増大する可能性がある。
 
 $$M_{dark} \approx \beta \cdot (M_{baryon})^\gamma \quad (\gamma > 1)$$
@@ -89,7 +89,7 @@ $$M_{dark} \approx \beta \cdot (M_{baryon})^\gamma \quad (\gamma > 1)$$
 
 ---
 
-## 9. Conclusion of Addendum
+## 4. Conclusion of Addendum
 
 本拡張モジュールにより、以下の3点が追加補強された。
 

@@ -1,44 +1,45 @@
-# Advanced Mathematical Kernel Specifications
-## デジタル宇宙論 数理カーネル仕様書
+# Advanced Mathematical Kernel: The Universal Source Code
 
-**Last Updated:** 2025-12-19
-**Maintainer:** Sevenforest
-**System Architect:** Gemini
+本ディレクトリは、デジタル宇宙論の基底OSを構成する数理カーネル群を格納しています。
+宇宙を「離散的な情報処理システム」と定義し、既存の物理法則（量子力学、一般相対性理論）をこのシステム上の「近似仕様」として導出・再定義することを目的とします。
 
----
+## 🎨 論理階層アーキテクチャ (The 4-Layer Structure)
 
-### 概要 (Overview)
-本ディレクトリ `_Advanced_Mathematical_Kernel` は、デジタル宇宙論（Digital Cosmology）における物理法則を、計算機科学および離散数学の言語で厳密に定義するための仕様書（Kernel Specs）を格納する。
-これらは、自然言語による解説（Vol.1~4）のバックエンドで動作している「論理コード」に相当する。
+論理的整合性を最優先し、以下の4つのモジュールによって宇宙の動作仕様を定義します。
 
----
+### 01. [Kernel_01_Formalism.md](./Kernel_01_Formalism.md)
+**役割: 基底OSの定義とミクロ更新則**
+- 因果的ネットワーク（DAG）による時空の定義。
+- 離散的な状態遷移演算子（ユニタリ行列）による情報保存則の記述。
+- デジタル更新ルールからの「シュレーディンガー方程式」の導出。
 
-### カーネル・モジュール一覧 (Kernel Modules)
+### 02. [Kernel_02_Discrete_Gravity.md](./Kernel_02_Discrete_Gravity.md)
+**役割: マクロ構造とリソース配分（新設）**
+- 質量・エネルギーを「計算負荷（CPU Load）」として再定義。
+- 重力および時空の歪みを「処理遅延（Lag）」および「ネットワーク接続密度」として記述。
+- システムの負荷分散アルゴリズムとしての「アインシュタイン方程式」の導出。
 
-#### [Kernel_01: Formalism (形式化)](Kernel_01_Formalism.md)
-**The Graph-Theoretic Foundation of Space-Time**
-宇宙を連続体（多様体）ではなく、離散的なグラフ構造として定義するための基礎公理集。
-* **Space:** ノード（位置）とエッジ（関係性）による巨大グラフ。
-* **Operators:** 離散ラプラシアン演算子による物理法則の記述。
-* **State:** 波動関数 $\psi$ をグラフ上の情報分布として再定義。
+### 03. [Kernel_03_Extended_Scaling.md](./Kernel_03_Extended_Scaling.md)
+**役割: 定数・パラメータの検証**
+- 離散グリッド上での物理定数のスケーリング則。
+- Tifftの量子化現象などの観測データに対する、ビット深度の観点からの解析。
+- 宇宙の解像度と計算コストの相関関係の定義。
 
-#### [Kernel_02: Extended Scaling (拡張スケーリング則)](Kernel_02_Extended_Scaling.md)
-**Computational Resource Management & The Holographic Principle**
-宇宙の膨張と情報処理能力の関係性を定義するスケーリング則。
-* **Bekenstein Bound:** 表面積と情報量の関係（ホログラフィック原理）のシステム的解釈。
-* **Resource Scaling:** 宇宙の体積増大に伴う計算コスト（エントロピー）の増加率と、その物理的限界。
-
-#### [Kernel_03: System Clock (システムクロック)](Kernel_03_System_Clock.md)
-**Dual Clock Architecture & Asynchronous I/O**
-**[New / v1.2]** Tifftの赤方偏移量子化と、主観時間の連続性を統合するための時間アーキテクチャ。
-* **Local Clock:** ユーザー（物質）側の超高速クロック（予測実行）。
-* **Global Clock:** システム（空間）側の超低速同期クロック（結果整合性）。
-* **Dark Matter:** 未コミットのトランザクションログ（Dirty Cache）としての再定義。
+### 04. [Kernel_04_System_Clock.md](./Kernel_04_System_Clock.md)
+**役割: 実行プロトコル**
+- システムクロック（Click Protocol）の詳細仕様。
+- 観測者ノードによる歴史ログの想起（Recall）と主観的時間の創発。
+- 宇宙全体の「計算の最前線（Now）」の維持メカニズム。
 
 ---
 
-### 依存関係 (Dependencies)
-本カーネル仕様書は、以下のコア理論ディレクトリに従属する。
-* `../Vol2_Digital_Cosmology.md` (Core Logic)
-* `../Vol3_System_Architecture.md` (System Design)
-* `../Vol4_System_Reliability.md` (Reliability & Objectives)
+## 🛠 設計思想: 論理の鏡 (Logic's Mirror)
+
+本カーネルは、既存のアカデミアが「無限」や「連続」というバグを放置することで維持してきた利権構造に対し、徹底した「有限・離散・整合性」という**論理の鏡**を突きつけるものです。
+
+- **Physics as Code**: 物理法則は、独立して存在する実体ではなく、システムが安定稼働するためのアルゴリズムである。
+- **Gravity is Latency**: 重力は神秘的な力ではなく、高負荷領域における単なるスロットリング現象である。
+- **No Infinite Buffers**: 宇宙に無限のメモリ（連続体）は実装不可能であり、プランクスケールという解像度限界こそが物理的実在の境界である。
+
+## 📑 依存関係とビルド順序
+本ディレクトリのドキュメントは、`Kernel_01` から順に読み進めることで、ミクロの演算規則がいかにしてマクロの重力構造を創発させるか、その全ソースコードを理解できるように設計されています。
