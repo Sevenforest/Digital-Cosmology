@@ -113,7 +113,12 @@ We have deployed a web application that allows you to experience the "Dead Zone 
 | ├── `Vol3_System_Architecture.md` | Architecture: Explaining Dark Matter/Energy as "Metadata & Scaling". |
 | ├── `Vol4_System_Reliability.md` | **Reliability: System reliability engineering via Gravitational Throttling and Sharding.** |
 | ├── `Vol5_UI_UX_Layer.md` | **Observation: The "Analog Illusion" created by low-frequency sampling, and the UI-based redefinition of Uncertainty.** |
-| └── `_Advanced_Mathematical_Kernel/` | **[Advanced] Mathematical Kernel Specifications** <br> `Kernel_01`: Discrete Foundations and Causal Networks.<br> `Kernel_02`: **[New]** Discrete Gravity and Derivation of Einstein Field Equations.<br> `Kernel_03`: Holographic Principles and Extended Scaling Laws.<br> `Kernel_04`: Asynchronous Dual Clock Architecture and the Hierarchy of Time. |
+| └── `_Advanced_Mathematical_Kernel/` | **[Detail] Mathematical Kernel Specs** |
+| ├── `Kernel_01` |  Discrete foundations and Causal Networks. |
+| ├── `Kernel_02` |  Discrete Gravity and derivation of Einstein Equations. |
+| ├── `Kernel_03` |  Holographic Principle and Information Scaling (Dark Energy/Matter). |
+| ├── `Kernel_04` |  Dual-Clock Architecture (Local vs. Global consistency). |
+| └── `Kernel_05` |  **[New] Exception Handling & Free Will (Debugging Destiny).** |
 | **`02_Implementation_Code/`** | **[Implementation] Proof of Concept & Models** |
 | ├── `Appendix_SourceCode.md` | Tech Appendix: Mathematical description and Python implementation. |
 | ├── `Simulation_Redshift.ipynb` | Execution Log: Visualization of the Dead Zone and Sensitivity Analysis. |
