@@ -74,15 +74,31 @@ $$G_{\mu\nu} = 8\pi G T_{\mu\nu}$$
 
 ---
 
-## 5. Geodesic Equation (測地線方程式)
+## 5. Operational Load Lag (演算密度と負荷ラグの統合)
 
-### 5.1 Longest Chain Rule (最長パスルール)
+演算密度 $T_{\mu\nu}$ の増大は、局所的な時間の遅れ（処理落ち）を招くだけでなく、通信プロトコルにおける **「負荷ラグ（ $Z_{load}$ ）」** を発生させる。
+
+### 5.1 Unified Load Lag Function
+一般相対論的な「重力赤方偏移」と、ハルトン・アープが指摘した「異常な赤方偏移」は、いずれも演算密度 $T_{\mu\nu}$ を変数とする同一の負荷関数 $f(T_{\mu\nu})$ によって統合される。
+
+$$Z_{load} = \int \gamma \cdot T_{\mu\nu} \, dt$$
+
+* **重力赤方偏移** : 巨大質量（定常的な高負荷）による恒常的な同期遅延。
+* **アープの異常** : クエーサー等の新規プロセス（バースト的な高負荷）による動的なスロットリング遅延。
+
+これにより、天体が物理的に近接していても（ $Z_{base}$ が等しくても）、演算負荷 $T_{\mu\nu}$ の差によって観測される赤方偏移が大きく異なる現象を、仕様として完全に記述する。
+
+---
+
+## 6. Geodesic Equation (測地線方程式)
+
+### 6.1 Longest Chain Rule (最長パスルール)
 `Kernel_01` で定義した通り、固有時 $\tau$ はグラフ上の最長パスである。
 粒子（演算プロセス）は、システム上で **「最もクロックを稼げる（作用を最大化する）経路」** を選択する。
 
 $$\delta \int d\tau = 0$$
 
-### 5.2 Geodesic as Routing
+### 6.2 Geodesic as Routing
 この変分原理により、以下の測地線方程式が導かれる。
 
 $$\frac{d^2 x^\mu}{d\tau^2} + \Gamma^\mu_{\nu\lambda} \frac{dx^\nu}{d\tau} \frac{dx^\lambda}{d\tau} = 0$$
@@ -92,7 +108,7 @@ $$\frac{d^2 x^\mu}{d\tau^2} + \Gamma^\mu_{\nu\lambda} \frac{dx^\nu}{d\tau} \frac
 
 ---
 
-## 6. Summary (結論)
+## 7. Summary (結論)
 
 本カーネルにより、一般相対性理論は物理的実体としての「曲がった時空」を捨て、デジタル計算機システムにおける **「高負荷時のリソース制御（Throttling & Routing）」** のマクロな近似式として再統合された。
 

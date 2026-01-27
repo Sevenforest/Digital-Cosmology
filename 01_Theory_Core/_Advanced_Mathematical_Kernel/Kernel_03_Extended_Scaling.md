@@ -3,8 +3,8 @@
 
 **Date:** 2025-12-09
 **Author:** Sevenforest (Concept Architect)
-**Implementation:** Gemini (Gen-9 Technical Writer)
-**Dependency:** Vol.4 Mathematical Formalism (v2.0)
+**Implementation:** Gemini (Technical Writer)
+**Dependency:** Kernel_01 Kernel_02
 
 ---
 
@@ -60,15 +60,38 @@ $$|\Delta E_{grav}| < E_{bit} \implies \text{Rollback (No Change)}$$
 
 $$\Delta\nu = \nu_0 \cdot \text{sgn}(\Delta\Phi) \cdot \left\lfloor \frac{|\Delta E_{grav}|}{E_{bit}} \right\rfloor$$
 
-これは「階段状」の赤方偏移（不感帯）を、人為的な床関数の導入ではなく、熱力学的・情報工学的必然性として導出するものである。
+これは「階段状」の赤方偏移（不感帯）を、人為的な床関数の導入ではなく、熱力学的・情報工学的必然性として導出するものであり、Tifft の量子化（Kernel_04）を導く基底レイヤーの仕様である。
 
 ---
 
-## 3. Topological Mass (ダークマターのグラフ理論的定義)
+## 3. Unified Shift Interpretation (解釈：偏移の多要因統合)
+セクション2の基底仕様を前提とし、観測される偏移を宇宙OSにおける「トータル・レイテンシ」として再定義する。
+
+### 3.1 The Fallacy of Recessional Velocity (後退速度の誤謬)
+標準宇宙論は、赤方偏移の主要因を「空間の膨張に伴う後退速度」とのみ定義している。しかし、デジタル宇宙論において偏移の本質は「通信経路および演算負荷に伴う同期ステップの累積（Lag）」である。
+
+### 3.2 Unified Shift Equation (統合偏移方程式)
+観測される全偏移 $Z_{total}$ は、以下の3要因の線形結合として定式化される。
+
+$$Z_{total} = Z_{base}(d) + Z_{load}(T_{\mu\nu}) + Z_{move}(v)$$
+
+- **$Z_{base}(d)$ (Base Scaling Lag):** ネットワーク距離 $d$ に比例する基本同期コスト。セクション2の $E_{bit}$ に基づく量子化偏移の主因。
+- **$Z_{load}(T_{\mu\nu})$ (Operational Load Lag):** 演算密度 $T_{\mu\nu}$（Kernel_02）が飽和点 $T_{max}$ に近づく領域で発生するスロットリング遅延。
+- **$Z_{move}(v)$ (Path Optimization Shift):** オブジェクトのノード間遷移（運動）に伴う、通信ホップ数の動的変動。
+
+### 3.3 Implementation of Arp Effect (アープ効果)
+ハルトン・アープが観測した「物理的に接続されながら異なる偏移を持つ天体」は、局所的な演算負荷の露出として記述される。近接する親銀河から放出された新規プロセス（クエーサー等）は、極めて高い演算密度 $T_{\mu\nu} \to T_{max}$ を持つ。この際、 $Z_{base}$ （距離）が同等であっても、高負荷に伴う $Z_{load}$ が重畳されるため、親銀河よりも著しく大きな赤方偏移を示す。これは **「非同期プロセスの初期同期ラグ」** としての仕様である。
+
+### 3.4 Logic of Blue Shift: Path Optimization
+アンドロメダ銀河等の青方偏移は、接近移動に伴う「通信経路の最適化」として定義される。オブジェクトが観測者に接近する場合、毎ステップの通信に必要なホップ数が減少する。これにより $Z_{move}$ が負の値を取り、距離による基本ラグ $Z_{base}$ の加算分を打ち消すことで波長の短縮が引き起こされる。
+
+---
+
+## 4. Topological Mass (ダークマターのグラフ理論的定義)
 
 「見えないが重力を持つ」ダークマターを、グラフ理論における「エッジコスト（接続コスト）」として定義する。
 
-### 3.1 Universe as a Weighted Graph (重み付きグラフとしての宇宙)
+### 4.1 Universe as a Weighted Graph (重み付きグラフとしての宇宙)
 宇宙グラフ $G = (V, E)$ において、全質量（全計算コスト） $M_{total}$ は、ノードコスト（物質）とエッジコスト（構造）の和である。
 
 $$M_{total} = \sum_{v \in V} w(v) + \sum_{e \in E} c(e)$$
@@ -76,7 +99,7 @@ $$M_{total} = \sum_{v \in V} w(v) + \sum_{e \in E} c(e)$$
 * **Baryonic Matter:** $M_{baryon} = \sum w(v)$ （ノードの重み＝粒子の質量）
 * **Dark Matter:** $M_{dark} = \sum c(e)$ （エッジのコスト＝空間構造の維持コスト）
 
-### 3.2 Spatial Index Overhead (空間インデックスのオーバーヘッド)
+### 4.2 Spatial Index Overhead (空間インデックスのオーバーヘッド)
 銀河団のような大規模構造（密なサブグラフ）を維持するためには、ノード間を結ぶエッジ（相互作用パス）の数が、ノード数の二乗オーダー（ $O(N^2)$ ）で増大する可能性がある。
 
 $$M_{dark} \approx \beta \cdot (M_{baryon})^\gamma \quad (\gamma > 1)$$
@@ -89,14 +112,15 @@ $$M_{dark} \approx \beta \cdot (M_{baryon})^\gamma \quad (\gamma > 1)$$
 
 ---
 
-## 4. Conclusion of Addendum
+## 5. Conclusion of Addendum
 
-本拡張モジュールにより、以下の3点が追加補強された。
+本カーネルにより、マクロな宇宙の動態は以下の通り再編された。
 
-1.  **Dark Energy:** ログ増大による必然的なストレージ拡張プロセス。
+1.  **Dark Energy:** 情報爆発に伴う必然的なヒープ領域の拡張オーバーヘッド。
 2.  **Redshift Dead Zone:** 情報エントロピーの量子化による更新棄却。
-3.  **Dark Matter:** ネットワーク・トポロジーの維持コスト。
+3.  **Redshift:** 距離、演算負荷、移動経路の三因子によるトータル・同期レイテンシ。
+4.  **Dark Matter:** 因果ネットワークのトポロジーを維持するための計算インデックスコスト。
 
-これらは全て、Vol.4 で定義された「宇宙＝計算機」というカーネル仕様から自然に導かれる帰結である。
+これは、宇宙を物理的な実体ではなく、絶えずスケーリングし続ける 「動的な情報処理プロセス」 として記述するものである。
 
 **Status:** Ready for Verification.
