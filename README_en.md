@@ -128,7 +128,8 @@ We have deployed a web application that allows you to experience the "Dead Zone 
 | ├── `VERIFICATION_LOG.md` | History: Verification log by an independent AI instance. |
 | └── `Log_20241208_Blind_Test_Claude.md` | External Audit Log: A "blind test" transcript where Claude (Anthropic) audited the theory without knowing the author. |
 | **`04_Future_Experiments/`** | **[Proposal] Experimental Protocols** |
-| └── `Experiment_Proposal.md` | RFC: Concrete protocols to detect the "Dead Zone" using Optical Lattice Clocks. |
+| ├── `Experiment_Proposal.md` | RFC: Concrete protocols to detect the "Dead Zone" using Optical Lattice Clocks. |
+| └── `Arp_Effect_PoC.ipynb` | **[New] Proof of Concept: Applying $Z_{load}$ patch to the NGC 7603 system.** |
 | **`05_Interactive_Lab/`** | **[Experience] Web Application** |
 | ├── `app.py` | Streamlit: Source code for the browser-based theory simulator. |
 | └── `app_gravity.py` | **[New] Gravity Lag Lab**<br>A web application to visually experiment with the effects of gravity potential update lag. Verify how galaxies maintain their shape without collapsing by adjusting the lag interval. |

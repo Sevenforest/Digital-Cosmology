@@ -135,7 +135,8 @@ AIは「論理的整合性」や「革新性」よりも、「査読の有無」
 | ├── `VERIFICATION_LOG.md` | 歴史: 独立したAIインスタンスによる理論の正当性検証ログ。 |
 | └── `Log_20241208_Blind_Test_Claude.md` | 外部監査ログ: 著者名を伏せた状態でClaude (Anthropic) に理論を評価させた「ブラインドテスト」の記録。 |
 | **`04_Future_Experiments/`** | **[提案] 不感帯検出の実験プロトコル** |
-| └── `Experiment_Proposal.md` | RFC: 光格子時計を用いた重力赤方偏移における「不感帯」検出実験の提案。 |
+| ├── `Experiment_Proposal.md` | RFC: 光格子時計を用いた重力赤方偏移における「不感帯」検出実験の提案。 |
+| └── `Arp_Effect_PoC.ipynb` | **[New] Arp効果の検証**<br>NGC 7603システムへのZ_loadパッチ適用による概念実証。 |
 | **`05_Interactive_Lab/`** | **[体験] Webアプリケーション** |
 | ├── `app.py` | Streamlit: ブラウザで動作する理論シミュレーターのソースコード。 |
 | └── `app_gravity.py` | **[New] 重力ラグ実験ラボ**<br>重力ポテンシャルの更新ラグ（Lag Interval）を調整し、銀河が崩壊せずに形状を維持する様子をブラウザ上で視覚的に実験できるWebアプリ。 |
