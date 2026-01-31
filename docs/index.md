@@ -70,6 +70,10 @@
 メインストリームの解説から溢れた、マニアックな仕様詳細とエンジニアリングFAQ。
 - [Deep Dive Q&A: デジタル宇宙のシステム詳細](DeepDive_QA.md)
 
+### 📚 付録: 観測異常リスト
+超解説リポジトリ版付録。
+現在観測されている異常と、デジタル宇宙論解釈のリスト。
+- [Observational Anomalies: Feature List](Anomaly_Catalog.md)
 ---
 
 ### 🔗 関連リソース
