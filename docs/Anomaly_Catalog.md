@@ -184,6 +184,44 @@ Vol.3: Dark Energy as Storage Scaling
 
 ---
 
+## 7. Amaterasu Particle (UHECR Exception)
+
+**発見:** Telescope Array Collaboration (2021/2023)  
+**観測:** 244 EeV という絶大なエネルギーを持つ宇宙線が、発生源のない「ローカル・ボイド」から飛来  
+**標準理論のステータス:** 🔴 GZK限界との矛盾 / 発生源不明  
+**デジタル解釈:** ⭐⭐⭐⭐⭐ 
+
+### Digital Cosmology Explanation
+
+```
+
+External_Logic: LIV (Lorentz Invariance Violation)
+Internal_Ref: Vol.3 (Thermal Management / Sparse Optimization)
+
+1. Environmental Trigger (Void/Cold Spot):
+   対象セグメントの低演算負荷により、OSの「Sparse Optimization」が有効化。
+
+2. External Mechanism (LIV / Modified Dispersion Relation):
+   $E^2 \simeq p^2 + m^2 + \eta \frac{p^3}{M_{Pl}}$
+   高エネルギー領域における演算精度の限界（離散性）を定義。
+   この数理モデルに基づき、衝突反応の閾値が消失したと推測。
+
+3. Observation (Amaterasu):
+   ボイド領域特有の「演算の簡略化」と「LIVによる反応制限」が重なった結果、
+   通常なら遮断されるはずのパケットが、衝突例外を発生させずに到達。
+
+```
+**参考文献 (External Resources):**
+- *An extremely energetic cosmic ray observed by a surface detector array* (Science, 2023)
+  - https://www.science.org/doi/10.1126/science.abo5095
+- *New physics as a possible explanation for the Amaterasu particle* (Lang et al., 2024 / arXiv:2405.03528)
+
+**関連文書:**
+- `01_Theory_Core/Vol3_System_Architecture.md`
+
+---
+
+
 ## Summary Table
 
 | Anomaly | Standard Status | Digital Confidence | Core Kernel / Reference |
@@ -194,6 +232,7 @@ Vol.3: Dark Energy as Storage Scaling
 | CMB Cold Spot | 🔴 Ignored | ⭐⭐⭐⭐⭐ | Vol.3 |
 | Axis of Evil | 🔴 Denied | ⭐⭐⭐⭐⭐ | Kernel_01 |
 | Dark Energy | 🟡 Unknown | ⭐⭐⭐⭐⭐ | Vol.3 |
+| Amaterasu Particle | 🔴 Critical | ⭐⭐⭐⭐⭐ | Vol.3 |
 
 ---
 
