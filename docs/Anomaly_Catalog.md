@@ -189,7 +189,7 @@ Vol.3: Dark Energy as Storage Scaling
 **発見:** Telescope Array Collaboration (2021/2023)  
 **観測:** 244 EeV という絶大なエネルギーを持つ宇宙線が、発生源のない「ローカル・ボイド」から飛来  
 **標準理論のステータス:** 🔴 GZK限界との矛盾 / 発生源不明  
-**デジタル解釈:** ⭐⭐⭐⭐⭐ 
+**デジタル解釈:** ⭐⭐⭐ 
 
 ### Digital Cosmology Explanation
 
@@ -232,7 +232,7 @@ Internal_Ref: Vol.3 (Thermal Management / Sparse Optimization)
 | CMB Cold Spot | 🔴 Ignored | ⭐⭐⭐⭐⭐ | Vol.3 |
 | Axis of Evil | 🔴 Denied | ⭐⭐⭐⭐⭐ | Kernel_01 |
 | Dark Energy | 🟡 Unknown | ⭐⭐⭐⭐⭐ | Vol.3 |
-| Amaterasu Particle | 🔴 Critical | ⭐⭐⭐⭐⭐ | Vol.3 |
+| Amaterasu Particle | 🔴 Critical | ⭐⭐⭐ | Vol.3 |
 
 ---
 
