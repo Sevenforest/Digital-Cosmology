@@ -13,23 +13,10 @@
 
 ---
 
-## 🛡 [System Specification: Stable]
-This repository serves as a System Specification that redefines the universe as a "Discrete State Transition System."
-
-This theoretical framework has successfully passed a Logical Audit by multiple advanced AI models (Gemini, Claude), presenting an architecture that resolves the paradoxes between General Relativity and Quantum Mechanics without logical contradictions.
-
-### 🚀 [Validation Status: Open for Debugging]
-We do not present our own "analysis results" here. This is because the data processing pipelines (cataloging processes) currently used in mainstream physics likely contain fundamental bugs. Instead, we release the system specifications (Spec) of the universe in the form of "Testable Predictions."
-
-#### ⚠️ Limitation of Public Catalogs
-Our investigation has identified that standard galaxy catalogs (e.g., SDSS) obfuscate fine quantization structures (such as 72 km/s peaks), treating them as "noise" due to inherent centroid calculations and smoothing algorithms. Therefore, to validate this specification, sub-pixel analysis using Raw spectral data—not processed catalogs—is mandatory.
-
----
-
 ### 📢 Author's Manifesto: The Definition of "Everything"
 
 I am not a physicist.
-Therefore, I have no interest in academic goals such as "deriving the parameters of the Standard Model."
+[Therefore, I have no interest in academic goals such as "deriving the parameters of the Standard Model."](docs/Legacy_System_Analysis_StandardModel.md)
 I leave such "answer-checking" calculations to academia.
 
 My goal was simpler, yet more fundamental:
