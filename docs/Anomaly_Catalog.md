@@ -25,12 +25,12 @@
 
 ```
 
-Kernel_03: Bit Depth & Quantization
-Kernel_04: Global System Clock (T_sys ≈ 3.26 Myr)
+Kernel_03 (v2.0): Unified Shift Equation (Z_base)
+Kernel_04 (v2.0): Global System Clock (δZ_global ≈ 2.4 × 10^-4)
 
-宇宙の空間管理ブロック = 1 Mpc
-→ 赤方偏移の最小更新単位 = 72 km/s
-→ これはシステムのアロケーションユニット（仕様）
+一次の仕様量：無次元のグローバル同期刻み δZ_global = Δv / c ≈ 2.4 × 10^-4
+（標準宇宙論の H_0 ≈ 72 km/s/Mpc へ近似換算すると、空間管理ブロック ≈ 1 Mpc、同期周期 T_sys ≈ 3.26 Myr に相当）
+→ 広域ブロックのホップ数に応じた同期レイテンシが、波長に依存しない離散ステップとして観測される（仕様）
 
 ```
 
@@ -69,7 +69,7 @@ Z_total = Z_base(d) + Z_load(T_μν)
 - `01_Theory_Core/_Advanced_Mathematical_Kernel/Kernel_02_Discrete_Gravity.md`
 
 **実装例:**
-- `02_Implementation_Code/Arp_Effect_PoC.ipynb`
+- `04_Future_Experiments/Arp_Effect_PoC.ipynb`
 
 ---
 
@@ -113,12 +113,12 @@ Kernel_03: Quantization Error
 
 ```
 
-Vol.3: Thermal Management
+Kernel_01 (v2.0): Event-Driven Non-Unitary Exhaust (E_comp -> E_rad)
+Kernel_03 (v2.0) / Vol.3 (v2.0): Sparse Optimization (Void = Null)
 
 巨大なボイド（物質の欠損）が存在する
-→ その座標領域には計算対象（オブジェクト）が存在しない
-→ システムはリソース節約のため、その領域の処理をスキップまたは簡易化する（Sparse Optimization）
-→ 結果として「情報密度（温度）」が低下する
+→ 管理すべきオブジェクトが存在しないため、空間分割インデックスが割り当てられず（M_index = 0 / Null）、状態遷移処理がスキップされる（Sparse Optimization）
+→ イベント駆動の不可逆排熱（CMB生成）が局所的に消失・低下する
 
 Cold Spotは、宇宙における「計算の空白地帯（Null Zone）」の可視化である。
 
@@ -167,15 +167,15 @@ Axis of Evil = 空間生成の「優先軸」または「走査方向」
 
 ```
 
-Kernel_03: Dynamic Heap Expansion
-Vol.3: Dark Energy as Storage Scaling
+Kernel_01 (v2.0): Total Energy Shell Closure (E = const.)
+Kernel_03 (v2.0) / Vol.3 (v2.0): Dynamic Heap Expansion
 
-情報量 I(t) の指数関数的増大
-→ ヒープ領域の動的拡張（スケーリング）
-→ 空間自体の「増設」による加速
+確定ログの総記録量 I(n) の指数関数的増大
+→ 論理アドレス空間（ヒープ領域 R(n) ∝ I(n)^α）の動的拡張
+→ 総エネルギー殻保存 E = const. を破らずに、UI層では空間の加速膨張としてレンダリングされる
 
-遠方（過去）= ログ蓄積少 → 膨張遅い
-近傍（現在）= ログ膨大 → 膨張速い
+遠方（過去）= ログ蓄積少 → 拡張速度小
+近傍（現在）= ログ膨大 → 拡張速度大
 
 ```
 
@@ -258,9 +258,9 @@ JWSTが観測した高赤方偏移の巨大銀河は、「ビッグバン直後�
 | Tifft Quantization | 🔴 Rejected | ⭐⭐⭐⭐⭐ | Kernel_03, 04 |
 | Arp Effect | 🔴 Rejected | ⭐⭐⭐⭐⭐ | Kernel_02, 03 |
 | Flyby Anomaly | 🟡 Debated | ⭐⭐⭐⭐⭐ | Kernel_02, 03 |
-| CMB Cold Spot | 🔴 Ignored | ⭐⭐⭐⭐⭐ | Vol.3 |
+| CMB Cold Spot | 🔴 Ignored | ⭐⭐⭐⭐⭐ | Kernel_01, 03, Vol.3 |
 | Axis of Evil | 🔴 Denied | ⭐⭐⭐⭐⭐ | Kernel_01 |
-| Dark Energy | 🟡 Unknown | ⭐⭐⭐⭐⭐ | Vol.3 |
+| Dark Energy | 🟡 Unknown | ⭐⭐⭐⭐⭐ | Kernel_01, 03, Vol.3 |
 | Amaterasu Particle | 🔴 Critical | ⭐⭐⭐ | Vol.3 |
 | JWST's "Impossible" Mature Galaxies | 🔴 Critical | ⭐⭐⭐⭐⭐ | Kernel_02, 03 |
 

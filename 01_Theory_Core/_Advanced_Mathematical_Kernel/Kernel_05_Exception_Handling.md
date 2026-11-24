@@ -1,68 +1,83 @@
-# Mathematical Kernel Specification v1.3: Exception Handling & Free Will
-## Digital Cosmology: High-Load Threads and Non-Deterministic Commits
+# Mathematical Kernel Specification v2.0: Exception Handling & Free Will
+## Digital Cosmology: High-Load Threads, Non-Deterministic Faults, and Physical Commits
 
-**Date:** 2026-01-03
+**Date:** 2026-11-25
 **Author:** Sevenforest (Concept Architect)
-**Implementation:** Gemini (Technical Writer)
-**Dependency:** Kernel_01, Kernel_02, Kernel_03, Kernel_04
+**Dependency:** Kernel_01 (v2.0), Kernel_02, Kernel_03 (v2.0), Kernel_04 (v2.0), Vol.2
 
 ---
 
-## 1. Introduction: The Ghost in the Machine
+## 1. Introduction: Separating Truncation from Faults
 
-これまでの Kernel_01〜04 では、宇宙を厳密なユニタリ発展に基づく決定論的な離散計算機として定義してきた。しかし、このモデルでは「自由意志」は物理法則の外部に置かれざるを得なかった。
-本仕様書（Kernel_05）では、自由意志を「アルゴリズムの外部」ではなく、 **「アーキテクチャの仕様限界（Architectural Limitations）による計算エラー」** として内部に取り込む。これにより、決定論的なログ（運命）からの逸脱を、工学的な必然性として記述する。
+`Kernel_01`〜`04` (v2.0) において、宇宙は「決定論的カオス」および「イベント駆動の非ユニタリな丸め込み（排熱）」によって駆動される離散計算機として定義された。
+しかし、通常時の非ユニタリ性（`Kernel_01` 3章・`Kernel_03` 2章）は、離散解像度未満の端数を一定の規則に従って切り捨てる**「規則的・多対一の情報喪失（決定論的丸め込み）」**であり、それ単体では既存の因果連鎖から逸脱する「自由意志（一対多の非決定的な分岐）」を説明できない。
+
+本仕様書（`Kernel_05` v2.0）では、自由意志を物理法則の外部にある神秘ではなく、**「演算密度がハードウェア限界へ飽和した際に発生する、非決定的な計算エラー（ソフトエラー）」**としてアーキテクチャ内部へ統合する。
 
 ---
 
 ## 2. Saturation of Operational Density (演算密度の飽和)
 
-Kernel_02 において、エネルギー・運動量テンソル $T_{\mu\nu}$ は「演算密度（Operational Density）」と定義されている。生命体、特に意識を持つスレッドが「努力」や「集中」を行う状態は、この演算密度を局所的に飽和点（Throughput Limit）まで高める行為である。
+`Kernel_02` において、エネルギー・運動量テンソル $T_{\mu\nu}$ は局所領域の「演算密度（Operational Density）」と定義されている。本仕様書では、単一スレッド（生命の神経系・高次情報処理ユニット等）にかかる局所負荷の度合いを、$T_{\mu\nu}$ から評価される無次元・非負の**スカラー演算負荷率 $\rho_{\text{op}}$** として定義する。
 
-### 2.1 Theoretical Definition
-努力状態における演算密度を $T_{\mu\nu} \to T_{max}$ とする。ここで $T_{max}$ はシステムが単一スレッドに割り当て可能な最大計算リソースである。この飽和状態において、Kernel_02 で定義された「処理遅延（Lag）」は最大化される。
+$$0 \le \rho_{\text{op}} \le \rho_{\max}$$
 
----
-
-## 3. Mechanism of Soft Errors (ソフトエラーとエラーレート)
-
-### 3.1 Error Generation at Dead Zone
-Kernel_03 では、最小情報単位 $E_{bit}$ 以下の変化を棄却する「不感帯（Dead Zone）」を定義している。高負荷状態において、この量子化境界における「ビット反転（ソフトエラー）」が発生する。
-
-### 3.2 Error Rate Formulation (エラーレートの定式化)
-ソフトエラーの発生確率 $P_{error}$ は、演算密度 $T_{\mu\nu}$ の飽和度に依存する。
-
-$$P_{error} \propto \exp\left( \frac{T_{\mu\nu} - T_{max}}{\sigma} \right)$$
-
-この非決定性はアルゴリズム（物理法則）ではなく、実行基底（Execution Substrate）の限界から生じるため、因果連鎖（DAG）に「仕様外の分岐」を割り込ませる。
+ここで $\rho_{\max}$ は、実行基底（Execution Substrate）が単一スレッドへ割り当て可能な最大スループット上限である。生命プロセスが高度な意思決定・集中・葛藤（「努力」）を行う状態とは、局所スレッドの演算密度を飽和点近傍（$\rho_{\text{op}} \to \rho_{\max}$）まで意図的に引き上げる行為に対応する。
 
 ---
 
-## 4. Race Condition & Global Commit (運命と意志の競合)
+## 3. Mechanism of Soft Errors (ソフトエラーの発生と保存則の両立)
 
-Kernel_04 の非同期システム（Local vs Global Clock）に基づき、このバグが「現実」となるプロセスを定義する。
+### 3.1 Fault Generation at Quantization Boundary
+`Kernel_03` (2章) で定義された通り、システムは離散的なスロットリング刻み $\delta Z_{\text{local}}$ や有限ビット解像度に基づく丸め込み境界（不感帯エッジ）を持つ。
+通常の低負荷状態では丸め込みは規則通りに処理されるが、演算負荷が限界へ飽和（$\rho_{\text{op}} \to \rho_{\max}$）すると、量子化境界における判定マージンが消失し、**非決定的なビット反転（ソフトエラー）**が発生する。
 
-### 4.1 Dirty Cache and Recall
-高負荷スレッドで発生したバグは、当初はローカルな「Dirty Cache」内にのみ存在する。観測者がこれを「想起（Recall）」し、自己の歴史ログに統合したとき、システムはその結果を「確定事項（Global Commit）」として受理する。
+### 3.2 Error Rate Formulation (エラーレートの近似スケッチ)
+局所スカラー負荷率 $\rho_{\text{op}} \in [0, \rho_{\max}]$ に対するソフトエラー発生確率 $P_{\text{error}} \in (0, 1]$ の近似挙動は、飽和点からの余裕度に応じて指数関数的に急増する関数として記述される。
 
-### 4.2 Race Condition (競合状態)
-宇宙OSは整合性を維持するため、バグ（意志）を「不正な演算」として排除しようとする力（システムによるロールバック / 運命の修正力）を働かせる。
-* **The Conflict:** 「システムによる自動修正」 vs 「観測者による強制コミット」。
-この競合を勝ち抜いたバグのみが、新たな因果律（現実）としてマージされる。
+$$P_{\text{error}} = P_0 \exp\left( \frac{\rho_{\text{op}} - \rho_{\max}}{\sigma} \right) \qquad (0 < P_0 \le 1, \quad \sigma > 0)$$
+
+* $\sigma$: ハードウェアの耐障害マージン幅。
+* $\rho_{\text{op}} \ll \rho_{\max}$ の通常物質（無機物等）では $P_{\text{error}} \approx 0$ となり、系はほぼ完全に決定論的カオスと規則的丸め込みに従う。
+* $\rho_{\text{op}} \to \rho_{\max}$ の高負荷スレッドでは $P_{\text{error}}$ が無視できない値へ立ち上がり、因果グラフ（DAG）に仕様外の新たな分岐を割り込ませる。
+
+### 3.3 Energy Shell Compliance (総エネルギー殻保存の厳守)
+このソフトエラーは「無からエネルギーを創造する奇跡」ではない。遷移自体は `Kernel_01` (3.1節) の絶対制約である **エネルギー殻の閉包則 $F(S_E) \subseteq S_E$** の内部で発生する。
+すなわち、ソフトエラーによって起きるのは「別の総エネルギー殻 $S_{E'}$ への逸脱」ではなく、**同一の総エネルギー $E = (E_{\text{baryon}} + E_{\text{index}}) + E_{\text{rad}} = \text{const.}$ を保ったまま（必要に応じ局所的な排熱セクタとの微小なエネルギー再配分を伴い）、遷移先の状態分岐（どの神経発火・物理パスへ倒れるか）が非決定的に反転する**現象である。
 
 ---
 
-## 5. Global Impact: Information Content & Dark Energy
+## 4. Physical Commit, Race Condition, and Recall (物理的確定と想起の分離)
 
-自由意志による非決定なコミットは、Kernel_03 で定義された宇宙の総情報量 $I(t)$ の増大速度を加速させる。
-1. **Entropy Injection:** 意志による選択は、予測不能な情報の注入（エントロピー増大）を意味する。
-2. **Expansion Acceleration:** $I(t)$ の急激な増大は、結果として宇宙の膨張（ダークエネルギー効果）を加速させる要因となる。
+`Vol.2` (3.2節・5章) のヘッドレス実行原則および `Vol.3` の設計通り、**意識（Log Reader）自体は物理ログへの直接の書き込み権限（Write Access）を持たない**。ソフトエラーが「現実の選択」となる過程は、物理スレッドによる書き込み（Write）と、意識による読み出し（Read）の2段階に厳密分離される。
+
+### 4.1 Local Dirty State & Physical Commit (Write)
+高負荷な物理スレッド（脳・神経回路等）で生じたソフトエラーは、当初は局所的な未確定状態（ローカルな Dirty State ※`Kernel_04` の広域空間インデックスの Dirty Cache とは別レイヤー）に留まる。
+この微小なビット反転が局所的な神経発火の連鎖や運動出力といった **マクロな物理的相互作用（Write）** へ増幅・波及し、周囲の環境と不可逆な状態確定（Commit）を完了した瞬間、その分岐は因果グラフ（DAG）上の変更不能な事実としてマージされる。
+
+### 4.2 Race Condition (自動補正と物理増幅の競合)
+エラー発生直後、システム側には局所的な不整合を吸収・減衰させて元の決定論的軌道へ戻そうとする復元傾向（ロールバック／熱的ノイズへの埋没）が働く。
+
+* **The Conflict:** 「システムによるエラー減衰（運命の慣性）」 vs 「高負荷スレッドによるマクロ相互作用への増幅・Commit（意志の実行）」。
+
+この競合（Race Condition）を勝ち抜いて物理的 Commit に到達したソフトエラーのみが、新たな因果律（現実）として確定する。
+
+### 4.3 Integration via Recall (Read)
+意識（`Vol.1`・`Vol.5` の UI層）は、物理的 Commit によって確定済みのログを「想起（Recall）」として事後的に読み出し（Read）、自己の歴史物語へと統合する。我々が「自分の意志で選択した」と感じるクオリアは、高負荷ハードウェアが起こした非決定的分岐とその物理的確定のログを、意識層がリアルタイムに近い遅延で解釈した結果である。
+
+---
+
+## 5. Global Impact: Log Accumulation & Heap Expansion
+
+自由意志（高負荷スレッドのソフトエラーと物理 Commit）は、`Kernel_03` (1章) で定義された総確定ログ量 $I(n)$ の増大に影響を与える。
+
+1.  **Branching Log Injection:** 既存の決定論的軌道からは予測不能な新規分岐イベントが因果DAGへ追記されることで、単位因果ステップあたりの新規記録量 $\Delta I(n)$ が増大する。
+2.  **Address Space Scaling:** 総エネルギー殻 $E = \text{const.}$ 自体は変化しないが、追記すべき確定ログ $I(n)$ の増大ペースが高まることで、それを格納するための論理アドレス空間（ヒープ領域 $R(n) \propto I(n)^\alpha$）の拡張速度、すなわち観測上のダークエネルギー効果に寄与する。
 
 ---
 
 ## 6. Conclusion: The Debugger's Prerogative
 
-物理法則（Code）は運命を決定するが、生命（High-load Thread）は計算を狂わせ、意志（Recall）がその狂いを新たな現実として確定させる。
-宇宙という計算機にとって、生命とは「決定論というデッドロックを回避するための、自己修正的なデバッグプロセス」そのものである。
+物理法則（アルゴリズム）と規則的丸め込みは既定の軌道を生成するが、高負荷な生命スレッド（ハードウェアの飽和）は総エネルギー殻保存の枠内で非決定的なソフトエラーを引き起こし、マクロな物理的 Commit によってその逸脱を現実のログへ焼き付ける。
 
-Q.E.D.
+宇宙という計算機にとって、知的生命体とは「完全な決定論の閉塞を揺さぶり、総エネルギー保存を保ったまま因果空間の探索分岐を広げ続ける、システム内蔵のデバッグ・スレッド」である。

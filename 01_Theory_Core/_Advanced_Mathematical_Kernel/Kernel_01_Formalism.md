@@ -1,127 +1,122 @@
-# Mathematical Kernel Specification v1.0: Discrete Foundations
-## Digital Cosmology: Discrete Foundations and Continuum Limits
+# Mathematical Kernel Specification v2.0: Discrete Foundations
+## Digital Cosmology: Non-Unitary State Transitions and Continuum Approximations
 
-**Date:** 2025-12-07
+**Date:** 2026-11-25
 **Author:** Sevenforest (Concept Architect)
-**Implementation:** Gemini (Technical Writer)
+**Status:** Revised (Unified Non-Unitary Core)
+
+---
+
+## 0. Scope of Formalism (本仕様書における数式の位置づけ)
+
+デジタル宇宙論は、宇宙を決定論的カオスおよび不可逆な離散遷移を含む「計算既約（Computationally Irreducible）」な状態遷移システムとして定義する。したがって、宇宙の厳密な挙動を閉じた解析数式（微分方程式）へと完全に圧縮することは原理的に不可能である。
+
+本仕様書群に登場する既存物理学の定数・微分・積分記号は、宇宙の「実体」を記述するものではなく、**マクロな観測値や既存理論との対応関係を確認するための「便宜的な近似ツール（スケッチ）」**として割り切って使用する。
 
 ---
 
 ## 1. Introduction: From Geometry to Graph
 
 従来の物理学（Old OS）は、時空を連続的な多様体（Manifold） $\mathcal{M}$ として扱い、その上の計量 $g_{\mu\nu}$ によって重力を記述してきた。
-しかし、デジタル宇宙論において「連続体」は巨視的な近似（Approximation）に過ぎず、実体は離散的な **「情報処理プロセス」** である。
+しかし、デジタル宇宙論において「連続体」は巨視的な近似（UI層でのレンダリング結果）に過ぎず、実体は離散的な **「情報処理プロセス」** である。
 
-本仕様書では、宇宙を **「因果的ネットワーク（Causal Network）」** として再定義し、既存の物理法則がその「極限（Limit）」として導出されることを数学的に記述する。
+本仕様書では、宇宙を **「因果的ネットワーク（Causal Network）」** として再定義し、既存の物理法則が「観測分解能が離散刻みより粗く、かつ孤立・定常状態により不可逆な切り捨てが無視できる領域」における近似極限として現れる構造を定義する。
 
 ---
 
 ## 2. Causal Structure (因果構造のグラフ理論的定義)
 
-時間はパラメータ $t$ ではなく、演算の順序（Order）によって事後的に生成される。
+時間は独立したパラメータ $t$ ではなく、演算の順序（Order）によって事後的に生成される。
 これを **因果集合（Causal Sets）** として定式化する。
 
 ### 2.1 Definition (基礎定義)
 宇宙 $\mathcal{U}$ は、以下のペアによって定義される。
 
-$$\mathcal{U} = (E, \prec)$$
+$$\mathcal{U} = (\mathcal{E}, \prec)$$
 
-* $E$: 離散的なイベント（演算処理）の集合（Events）。
+* $\mathcal{E}$: 離散的なイベント（演算処理）の集合（Events）。
 * $\prec$: 半順序関係（Partial Order）。 $x \prec y$ は「イベント $x$ がイベント $y$ の原因である（入力となっている）」ことを示す。
 
 この関係は以下の公理（DAG: 有向非巡回グラフの性質）を満たす。
 
 1.  **Transitivity (推移律):**
-    $$\forall x, y, z \in E, (x \prec y \land y \prec z \implies x \prec z)$$
+    $$\forall x, y, z \in \mathcal{E}, (x \prec y \land y \prec z \implies x \prec z)$$
 2.  **Non-circularity (非巡回性 / 因果律):**
-    $$\forall x, y \in E, (x \prec y \implies y \not\prec x)$$
+    $$\forall x, y \in \mathcal{E}, (x \prec y \implies y \not\prec x)$$
 3.  **Finiteness (局所有限性):**
-    $$\forall x, z \in E, |\{y \in E \mid x \prec y \prec z\}| < \infty$$
+    $$\forall x, z \in \mathcal{E}, |\{y \in \mathcal{E} \mid x \prec y \prec z\}| < \infty$$
 
 ### 2.2 Emergence of Time (時間の創発)
-固有時（Proper Time）$\tau$ は、グラフ上の **「最長パス（Longest Chain）」** として定義される。
+固有時（Proper Time） $\tau$ は、グラフ上の **「最長パス（Longest Chain）」** のステップ数として定義される。
 
 $$\tau(x, y) = \kappa \cdot \max \{ L(\gamma) \mid \gamma \text{ is a chain from } x \text{ to } y \}$$
 
-* $L(\gamma)$: チェーン上のリンク（ステップ）数。
-* $\kappa$: 基本時間単位（プランク時間相当）。
+* $L(\gamma)$: チェーン上のリンク（状態更新ステップ）数。
+* $\kappa$: 既存物理の秒単位へ換算するための近似スケール係数。
 
 > **System Note:**
-> 一般相対性理論における「時間の遅れ」は、重力ポテンシャルの深い場所（処理密度が高い領域）において、パスの選択肢が変化し、結果として因果的距離（ステップ数）が変化することで説明される。
+> 一般相対性理論における「時間の遅れ」は、高負荷領域（重力ポテンシャルの深い領域）でスロットリングが発生し、外部の参照パスと比較した際に高負荷領域を通るチェーンの更新ステップ数 $L(\gamma)$ が少なくなることで説明される。
 
 ---
 
-## 3. Discrete Conservation (離散的保存則とユニタリ性)
+## 3. Discrete Conservation without Unitarity (非ユニタリ遷移と保存則の両立)
 
-連続空間における「ネーターの定理（対称性からの保存則導出）」は、離散系では厳密には成立しない。
-代わりに、セル・オートマトンにおける **「可逆性（Reversibility）」** と **「情報保存（Information Conservation）」** を用いてエネルギー保存則を再定義する。
+連続時空を前提とする「ネーターの定理」は、離散系では基礎公理にならない。また本仕様書（v2.0）では、宇宙の基本遷移ルールにおいて **ユニタリティ（微視的可逆性）は厳密には破れている** ことを正式な公理として採用する。
 
-### 3.1 State Evolution (状態遷移)
-宇宙の全状態（Global State）を $|\Psi_n\rangle$ とする（ $n \in \mathbb{N}$ は離散的ステップ）。
-時間発展演算子（Hamiltonian Operator）を $\hat{U}$ とすると：
+### 3.1 Energy Shell Closure (エネルギー殻の閉包則)
+ユニタリティに頼らず保存則を保証するため、系の全状態集合 $S$ を離散的なスカラー不変量 $E$（系内の総計算リソース／総エネルギーに相当する量）の値ごとに分割する。
 
-$$|\Psi_{n+1}\rangle = \hat{U} |\Psi_n\rangle$$
+$$S = \bigsqcup_{E} S_E$$
 
-ここで、システムが情報を失わない（ランダウアーの原理による発熱を起こさない）ためには、演算子 $\hat{U}$ は **ユニタリ行列（Unitary Matrix）** でなければならない。
+状態遷移ルール $F$ に課される唯一の絶対制約は、**「ある殻 $S_E$ に属する状態は、遷移後も必ず同じ殻 $S_E$ 内に留まる」**という閉包条件である。
 
-$$\hat{U}^\dagger \hat{U} = \hat{I}$$
+$$F(S_E) \subseteq S_E$$
 
-### 3.2 Conservation of Information (情報量の保存)
-「エネルギー」の実体は「状態を変化させる能力（ビット数）」である。
-全情報量（フォン・ノイマン・エントロピー）は、ユニタリ発展の下で不変である。
+このとき $F$ は1対1（全単射・可逆）である必要はない。複数の異なる過去履歴が多対一に合流する**不可逆な情報切り捨て（ユニタリティの破れ）**を許容したまま、総量 $E$ の厳密な保存則が組み合わせ論的に保証される。
 
-$$S(\Psi_{n+1}) = -\text{Tr}(\rho_{n+1} \ln \rho_{n+1}) = S(\Psi_n)$$
+### 3.2 Resource Budget & Event-Driven Exhaust (リソース勘定とイベント駆動排熱)
+保存される総リソース $E$ は、構造化された演算を担う **計算セクタ（$E_{\text{comp}}$）** と、構造を失った背景ノイズを担う **排熱セクタ（$E_{\text{rad}}$）** に厳密に配分される。さらに計算セクタは、物質本体のコストと空間インデックス維持コスト（`Kernel_03` 4章）の和で構成される。
+
+$$E = E_{\text{comp}} + E_{\text{rad}} = \text{const.}, \qquad E_{\text{comp}} = E_{\text{baryon}} + E_{\text{index}}$$
+
+* **イベント駆動の不可逆排熱:** 計算セクタから排熱セクタへの移行（$E_{\text{comp}} \to E_{\text{rad}}$）は、静止した状態から無条件に垂れ流されるのではなく、**状態遷移・相互作用・確定（Commit）が発生したイベント時のみ**実行される。
+* **丸め込みとCMBの生成:** イベント確定時、システムの離散解像度未満の微小な状態差や不要履歴は、計算セクタ $E_{\text{comp}}$ から不可逆的に切り捨てられる。しかし殻 $S_E$ の閉包条件によりエネルギー自体は消滅できないため、$E_{\text{comp}}$ から引き落とされた端数エネルギーは、構造を剥ぎ取られた無秩序なノイズとして排熱セクタ $E_{\text{rad}}$（宇宙背景放射：CMB）へ強制転送される。
+* **ヒープ拡張（ダークエネルギー）との区別:** `Kernel_03` で定義されるアドレス空間（ヒープ領域）の拡張は、管理可能な論理容量（座標枠）の増設であり、総エネルギー殻 $E = \text{const.}$ に外部から新規エネルギーを注入するものではない（標準理論が宇宙エネルギーの約68%をダークエネルギーとして計上するのは、このアドレス空間拡張速度を連続時空上の真空エネルギー密度へと誤換算した結果である）。イベント駆動による緩やかな排熱の蓄積と、アドレス空間拡張に伴う単位領域あたりの排熱希釈のバランスによって、系全体の熱暴走が回避される。
 
 > **System Note:**
-> 現実世界でエネルギーが保存されるのは、宇宙のOSが「可逆計算（Reversible Computing）」を行っているからである。エネルギーの散逸（エントロピー増大）は、ローカルな視点での情報の粗視化（Coarse-graining）によって生じる見かけ上の現象に過ぎない。
+> 単純な多対一ルールでは系がアトラクタに落ちて停止するが、イベント確定時の切り捨て端数を総量 $E$ 保存のまま背景セクタ $E_{\text{rad}}$ のランダム状態へ流し込むことで、**「保存則の維持」「真の非ユニタリ性（時間の矢）」「CMBとしての排熱」**の3つが矛盾なく同時成立する。
 
 ---
 
-## 4. Continuum Limit (連続極限の導出)
+## 4. Continuum & Unitary Limit (孤立・定常近似としての量子力学)
 
-なぜ離散的なデジタル宇宙が、我々の目には「滑らかなアナログ世界」に見えるのか。
-それは、観測解像度に対してステップサイズ $\epsilon$ が極小だからである。
-以下に、シュレーディンガー方程式を「デジタル更新ルールの一次近似」として導出する。
+バックエンドが離散的かつ非ユニタリであるにもかかわらず、孤立した量子系においてシュレーディンガー方程式（連続・ユニタリ発展）が極めて高い精度で機能するのは、以下の2条件が満たされている領域に限られるからである。
 
-### 4.1 Derivation (導出プロセス)
+1.  **見かけの連続性:** 離散的な状態更新ステップが観測装置の分解能に比べて十分に細かく、UI層でのダウンサンプリングによって連続曲線として近似できること。
+2.  **見かけのユニタリ性:** 系が外部から孤立しており、確定（Commit）や丸め込みに伴う **「不可逆な履歴消去および排熱セクタへの流出（$E_{\text{comp}} \to E_{\text{rad}}$）」の発生頻度が、観測限界を下回っていること**（距離や時間の長短ではなく、相互作用・Commit 頻度の低さが条件となるため、天文スケールの光干渉とも矛盾しない）。
 
-離散的な更新式を出発点とする。
+### 4.1 Effective Approximation Sketch (有効近似のスケッチ)
+上記の2条件（見かけの連続性・見かけのユニタリ性）を満たす孤立系において、離散状態遷移 $|\Psi_{n+1}\rangle = F(|\Psi_n\rangle)$ を、連続時間パラメータ $t$ と微小刻み $\epsilon$ による近似的なユニタリ演算子 $\hat{U}_{\text{eff}}(\epsilon)$ で書き下す。
 
-$$|\Psi(t + \epsilon)\rangle = \hat{U}(\epsilon) |\Psi(t)\rangle$$
+$$|\Psi(t + \epsilon)\rangle \approx \hat{U}_{\text{eff}}(\epsilon) |\Psi(t)\rangle, \quad \hat{U}_{\text{eff}}(\epsilon) \approx \hat{I} - i \frac{\epsilon}{\hbar} \hat{H} + O(\epsilon^2)$$
 
-ここで、$\epsilon \to 0$ の極限において、ユニタリ演算子 $\hat{U}(\epsilon)$ をテイラー展開する。
-ユニタリ性を満たすため、$\hat{U}$ はエルミート演算子 $\hat{H}$（ハミルトニアン）を用いて以下のように表現できる。
+ここから形式的な連続近似（$\epsilon \to 0$）をとることで、標準的なシュレーディンガー方程式が **局所近似ツール** として回収される。
 
-$$\hat{U}(\epsilon) \approx \hat{I} - i \frac{\epsilon}{\hbar} \hat{H} + O(\epsilon^2)$$
+$$i\hbar \frac{\partial}{\partial t} |\Psi(t)\rangle \approx \hat{H} |\Psi(t)\rangle$$
 
-これを更新式に代入して整理する。
+### 4.2 Breakdown of the Approximation (近似の破綻領域)
+この連続・ユニタリ近似は、以下の領域において破綻し、バックエンドの離散・非ユニタリ仕様が露出する。
 
-$$|\Psi(t + \epsilon)\rangle - |\Psi(t)\rangle = - i \frac{\epsilon}{\hbar} \hat{H} |\Psi(t)\rangle$$
-
-両辺を $\epsilon$ で割り、$\epsilon \to 0$ の極限（微分）をとる。
-
-$$\lim_{\epsilon \to 0} \frac{|\Psi(t + \epsilon)\rangle - |\Psi(t)\rangle}{\epsilon} = - \frac{i}{\hbar} \hat{H} |\Psi(t)\rangle$$
-
-$$\frac{\partial}{\partial t} |\Psi(t)\rangle = - \frac{i}{\hbar} \hat{H} |\Psi(t)\rangle$$
-
-両辺に $i\hbar$ を掛けることで、標準的なシュレーディンガー方程式が得られる。
-
-$$i\hbar \frac{\partial}{\partial t} |\Psi(t)\rangle = \hat{H} |\Psi(t)\rangle$$
-
-### 4.2 Interpretation (解釈)
-この導出により、以下の事実が数学的に証明された。
-
-1.  **実体:** 宇宙は離散的なステップ $\hat{U}$ で駆動している。
-2.  **近似:** 我々が知る物理法則（微分方程式）は、デジタル演算の連続極限近似（エミュレーション）に過ぎない。
+1.  **観測・相互作用に伴う Commit（`Vol.2` / `Kernel_03`）:** 状態確定と離散丸め込みにより履歴の不可逆消去と排熱（CMB）が生じる領域。
+2.  **不感帯の境界（`Kernel_03`）:** 空間ドメインのスロットリング段数 $k(x)$ が不連続に切り替わるエッジ領域。
+3.  **演算密度の飽和（`Kernel_05`）:** 高負荷スレッドにおいてハードウェア限界のソフトエラーが発生する領域。
 
 ---
 
 ## 5. Conclusion (結論)
 
-本仕様書により、デジタル宇宙論は単なる概念モデルではなく、既存の物理学を包含する上位互換のフレームワークであることが示された。
+本仕様書（v2.0）により、デジタル宇宙論の基底公理は以下の通り統一された。
 
-* **Geometry is Graph:** 時空はグラフである。
-* **Energy is Information:** エネルギーは情報である。
-* **Physics is Code:** 物理法則はアルゴリズムである。
-
-Q.E.D.
+* **Geometry is Graph:** 時空は因果グラフ $\mathcal{U} = (\mathcal{E}, \prec)$ である。
+* **Conservation without Unitarity:** 保存則はエネルギー殻 $E = (E_{\text{baryon}} + E_{\text{index}}) + E_{\text{rad}} = \text{const.}$ の閉包性によって担保され、ユニタリティはイベント駆動の不可逆な切り捨てにより本質的に破れている。
+* **Continuous Physics is a Tool:** 微分方程式とユニタリ発展は、離散刻みが観測分解能未満であり、かつ不可逆な Commit・排熱の発生頻度が観測限界を下回る孤立系において有効な近似ツールである。
