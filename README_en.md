@@ -145,9 +145,12 @@ The simulation code in this repository includes a **Sensitivity Analysis** modul
 ### 4. Historical Convergence (Two-Tier Quantization)
 The discrete clock architecture operates on two tiers (`Kernel_04` v2.0). While the local throttling step $\delta Z_{\text{local}}$ generates the gravitational redshift Dead Zone, the global block-synchronization step $\delta Z_{\text{global}} \approx 2.4 \times 10^{-4}$ structurally aligns with the **"Redshift Quantization (~72 km/s periodicity)"** reported by William Tifft et al.
 
-### 5. Non-Unitary Exhaust as CMB & "Cold Spot"
-Under Energy Shell Closure, $E = (E_{\text{baryon}} + E_{\text{index}}) + E_{\text{rad}} = \text{const.}$, irreversible truncation residuals generated during event-driven Commits are expelled into the background sector $E_{\text{rad}}$ as the Cosmic Microwave Background (`Kernel_01` / `Vol.3` v2.0).
-Simultaneously, matter-free supervoids remain unallocated (Null) and skipped under **Sparse Optimization**, suppressing local exhaust generation and producing low-temperature anomalies (**CMB Cold Spot**) deeper than standard ISW predictions.
+### 5. Two-Layer Exhaust Architecture for CMB & the "Cold Spot"
+Under Energy Shell Closure, $E = (E_{\text{baryon}} + E_{\text{index}}) + E_{\text{rad}} = \text{const.}$, the Cosmic Microwave Background (CMB) is maintained across two layers (`Kernel_01` / `Vol.2` / `Vol.3`):
+* **Lower Layer (Steady Baseline Refresh):** Operates uniformly across the sky regardless of mass, continuously re-shuffling existing energy within $E_{\text{rad}}$ without creating new energy—preserving the >99.99% uniform 2.725 K blackbody baseline.
+* **Upper Layer (Tiny Event-Driven Differential):** Active only in matter-occupied regions and their spheres of influence, expelling minute truncation residuals ($10^{-5}$ order relative to the baseline) from $E_{\text{comp}}$ to $E_{\text{rad}}$ during irreversible Commits.
+
+In matter-free supervoids, **Sparse Optimization** sets only the upper layer to unallocated (`Null`) and skips it. Because the lower-layer refresh remains intact, voids do not become pitch-black holes; instead, missing the tiny upper-layer contribution yields a subtle temperature dip (**CMB Cold Spot**, ~$-0.005\%$) consistent with observations.
 
 ## 💌 Message from the Architect
 
