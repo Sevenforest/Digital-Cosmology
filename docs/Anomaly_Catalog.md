@@ -114,12 +114,13 @@ Vol.5 (v2.0): Coordinate Context Switching & Quantization Leak
 
 ```
 
-Kernel_01 (v2.0): Two-Layer CMB Exhaust Architecture (E = E_comp + E_rad = const.)
-Kernel_03 (v2.0) / Vol.3 (v2.0): Sparse Optimization (Upper Layer = Null in Voids)
+Kernel_01 (v2.1): Two-Layer CMB Exhaust & Hypervisor Heap Dilution (E = E_comp + E_rad = const.)
+Kernel_03 (v2.1) / Vol.3 (v2.1): Sparse Optimization (Upper Layer = Null in Voids)
 
-下位レイヤー（時空カーネルの基底維持）：
-質量の有無に関わらず全天で均一に稼働し、既存の背景セクタ E_rad を定常リフレッシュ
-→ 全天の 99.99% 超を占める均一な 2.725K 黒体放射のベースラインを維持
+下位レイヤー（時空カーネルのローカル基底維持）：
+質量の有無に関わらず全空間ドメインが同一カーネル仕様で既存の背景セクタ E_rad を
+ローカルに定常維持し、Hypervisor 層のヒープ拡張に伴う一律体積希釈（ρ_rad ∝ R^-3）へ追従
+→ 超光速通信を要さず、全天の 99.99% 超を占める均一な 2.725K ベースラインを維持
 
 上位レイヤー（オブジェクト管理・相互作用Commit）：
 物質存在領域・影響圏のみで稼働し、イベント確定時の未確定パス切り捨て端数を
@@ -251,6 +252,8 @@ JWSTが観測した高赤方偏移の巨大銀河は、「ビッグバン直後�
 赤方偏移の要因を距離のみにハードコードしたことによる、標準理論側の完全なパースエラー（解釈違い）である。
 
 ```
+**反証可能テスト（高 $z$ 局所CMB温度テスト / `Kernel_03` 3.1節）：**
+もし高赤方偏移 $Z_{\text{total}}$ の大部分が距離 $Z_{\text{base}}$ ではなく局所的な演算負荷 $Z_{\text{load}}$ によるものであれば、その天体（およびアープ天体）の周囲を満たす局所CMB温度は標準理論の $2.725(1 + Z_{\text{total}})\text{ K}$ まで上昇せず、実際のホップ距離 $Z_{\text{base}}$ 相当の低温に留まるはずである。逆に、これらの天体周囲で例外なく $2.725(1 + Z_{\text{total}})\text{ K}$ が実測されれば、$Z_{\text{load}}$ 起源仮説は明確に反証される。
 
 **関連文書:**
 - `01_Theory_Core/Vol3_System_Architecture.md`

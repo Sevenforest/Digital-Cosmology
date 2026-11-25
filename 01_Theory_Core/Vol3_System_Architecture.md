@@ -3,13 +3,13 @@
 
 **Date:** 2026-11-25
 **Author:** Sevenforest (Concept Architect)
-**Dependency:** Vol.1, Vol.2, Kernel_01 (v2.0), Kernel_02, Kernel_03 (v2.0), Kernel_04 (v2.0)
+**Dependency:** Vol.1, Vol.2, Kernel_01 (v2.1), Kernel_02, Kernel_03 (v2.1), Kernel_04 (v2.1)
 
 ---
 
 ### 概要 (Abstract)
 本稿は、デジタル宇宙論（Digital Cosmology）の第3巻として、宇宙の約95%を占めるとされる「ダークマター（暗黒物質）」および「ダークエネルギー（暗黒エネルギー）」、ならびに全天から観測される「宇宙背景放射（CMB）」の正体を、計算機システムのアーキテクチャ視点から定義する。
-既存の物理学において正体不明とされてきたダークセクターは、有限のリソースで稼働する離散状態遷移システムを維持するための **「疎な空間分割インデックス（Metadata）」** および **「論理アドレス空間の動的拡張（Dynamic Heap Scaling）」** である。さらにCMBは、**「下位レイヤーによる基底排熱の定常リフレッシュと、上位レイヤーにおける不可逆Commitの微小イベント排熱の2層構造」** として統一的に記述される。
+既存の物理学において正体不明とされてきたダークセクターは、有限のリソースで稼働する離散状態遷移システムを維持するための **「疎な空間分割インデックス（Metadata）」** および **「論理アドレス空間の動的拡張（Dynamic Heap Scaling）」** である。さらにCMBは、**「下位レイヤーによるローカル基底維持（ヒープ拡張に伴う一律希釈）と、上位レイヤーにおける不可逆Commitの微小イベント排熱の2層構造」** として統一的に記述される。
 
 ---
 
@@ -51,8 +51,10 @@ $$\text{Gravity} \propto \text{Processing Lag（CPUスロットリング）}$$
 2.  **高密度・局所領域（太陽系・銀河中心部）:** 物質が同一の最小区画（リーフ）に密集しているため、上位ツリーの維持コストは物質本体のコスト $M_{\text{baryon}}$ に対して無視できるほど小さい（バリオン支配）。
 3.  **低密度・広域領域（銀河外縁部・矮小銀河）:** 物質が希薄であっても、散在するオブジェクトを広大なアドレス空間に繋ぎ止めるための階層ツリー維持コストは発生する。結果として外縁部ほど **$M_{\text{index}} / M_{\text{baryon}}$ の比率が跳ね上がり**、銀河の平坦な回転曲線が自然に再現される。
 
-#### 3.3 非同期再構築と Dirty Cache（`Kernel_04` との接続）
-空間分割インデックス $M_{\text{index}}$ の大域的な再構築（Re-indexing）は、低周波のグローバルクロック（$T_{\text{sys}}$：`Kernel_04`）に従って非同期実行される。そのため、銀河・銀河団の高速衝突や急激な大規模質量移動の発生から **$T_{\text{sys}}$（近似換算約326万年）以内の過渡的フェーズ** においては、バリオンの移動に対して空間インデックスの再配置が追いつかず、一時的に **Dirty Cache（更新待ちの空間インデックス）** として実体分布からズレた位置に重力源が取り残される（※複数回のグローバル再構築を完了した衝突後長時間の系は、Dirty Cache ではなく定常的な空間インデックス分布の問題として扱う）。
+#### 3.3 非同期再構築・Dirty Cache・未解決課題（`Kernel_04` との接続）
+空間分割インデックス $M_{\text{index}}$ の大域的な再構築（Re-indexing）は、空間内の実体配置走査を要するため、ローカル処理の停止（グローバルロック）を避けて低周波のグローバルクロック（$T_{\text{sys}}$：`Kernel_04`）で非同期実行される。そのため、銀河・銀河団の高速衝突や急激な大規模質量移動の発生から **$T_{\text{sys}}$（近似換算約326万年）以内の過渡的フェーズ** においては、バリオンの移動に対して空間インデックスの再配置が追いつかず、一時的に **Dirty Cache（更新待ちの空間インデックス）** として実体分布からズレた位置に重力源が取り残される。
+
+* **Open Problem（衝突後長時間の銀河団系）:** 複数回のグローバル再構築を完了しているとみなされる衝突後長時間の系（弾丸銀河団等）において、なぜ中央の高温X線ガス領域ではなく前方をすり抜けた銀河群側に重力レンズの主ピークが偏っているのかは、現行の Sparse Octree の定量的コスト関数および大規模再構築トリガー条件における未解決課題（Open Problem）として明記し、今後の精緻化対象とする（`Kernel_03` 4.4節）。
 
 ---
 
@@ -67,15 +69,16 @@ $$\text{Gravity} \propto \text{Processing Lag（CPUスロットリング）}$$
 * **ダークエネルギーの正体:** 確定ログ $I(n)$ の増大に伴うメモリ不足（OOM）を回避するため、システムが書き込み可能なアドレス空間のスケール $R(n) \propto I(n)^\alpha$ を動的に拡張し続けているプロセス。
 * **総エネルギー保存との両立:** これは物理エネルギーを無から創造する現象ではなく、論理的なアドレス枠（座標空間）の増設であるため、`Kernel_01` の総エネルギー殻保存 $E = \text{const.}$ を破らない。標準理論が宇宙エネルギーの約68%をダークエネルギーと計上しているのは、このアドレス空間拡張速度を連続時空上の「真空エネルギー密度」へと誤換算した結果である。
 
-#### 4.3 排熱処理：2層CMB排熱アーキテクチャと Cold Spot (Thermal Management & Non-Unitary Exhaust)
-本システム（v2.0）は、旧版の「厳密なユニタリ性によるスクランブル」仮説を廃止し、**「宇宙の基本遷移においてユニタリティ（微視的可逆性）は本質的に破れている」** という公理（`Kernel_01` 3章）を採用する。
+#### 4.3 排熱処理：2層CMB排熱アーキテクチャ・Cold Spot・高 $z$ 温度テスト
+本システム（v2.1）は、旧版の「厳密なユニタリ性によるスクランブル」仮説を廃止し、**「宇宙の基本遷移においてユニタリティ（微視的可逆性）は本質的に破れている」** という公理（`Kernel_01` 3章）を採用する。
 
 * **エネルギー殻閉包による保存則:** 遷移ルールは多対一（不可逆な履歴切り捨て）を許容するが、系全体の総リソース $E$ は厳密に保存される。
   $$E = (E_{\text{baryon}} + E_{\text{index}}) + E_{\text{rad}} = \text{const.}$$
 * **2層排熱アーキテクチャ（CMBの正体）:** 背景セクタ $E_{\text{rad}}$（宇宙背景放射：CMB）は、役割の異なる2つの階層で維持される（`Kernel_01` 3.2節 / `Vol.2` 2.3節）。
-  1. **下位レイヤー（時空カーネルの基底維持）：** 質量の有無に関わらず全天で均一に稼働し、すでに $E_{\text{rad}}$ に存在する基底エネルギーを毎ステップ再シャッフル（熱平衡リフレッシュ）し続ける。新規エネルギーを生み出さないため $E = \text{const.}$ を厳守し、全天の99.99%超を占める均一な 2.725K 黒体放射のベースラインを維持する。
-  2. **上位レイヤー（オブジェクト管理・相互作用Commit）：** 物質が存在する領域およびその影響圏で稼働し、イベント確定（Commit）時の未確定パス切り捨てに伴う極微小な端数エネルギー（基底に対して $10^{-5}$ オーダーの差分）を、イベント駆動で $E_{\text{comp}} \to E_{\text{rad}}$ へ転送する。この上乗せ分は基底背景に対してごく微小であるため、銀河団が強烈なCMB光源になる矛盾を起こさず、かつ4.2節のヒープ拡張による空間希釈と釣り合うことで熱暴走も回避される。
-* **CMB Cold Spot の桁感との整合:** 巨大な超空洞（ボイド）では3.2節の **Sparse Optimization** により上位レイヤーのみが未割り当て（Null）・処理スキップとなる。下位レイヤーの基底循環自体は全天で稼働し続けているため、ボイドは真っ暗な穴にはならず、上位レイヤー由来の極微小な排熱差分だけが欠落することで、平均温度からわずかに凹む **CMB Cold Spot（約 $-0.005\%$）** が生じる。
+  1. **下位レイヤー（時空カーネルのローカル基底維持）：** 質量の有無に関わらず全空間ドメインが同一の基底カーネル仕様で稼働し、自身の領域の $E_{\text{rad}}$ 黒体平衡をローカルに定常維持する。Hypervisor 層による論理アドレス空間（ヒープ $R(n)$）の一律スケーリングに伴い、総量 $E_{\text{rad}} \approx \text{const.}$ を保ったまま空間あたりのエネルギー密度が緩やかに体積希釈（$\rho_{\text{rad}} \propto R^{-3}$、温度 $T \propto R^{-3/4}$ への低エネルギー光子再配分）されることで、超光速通信や熱暴走を伴わずに全天の99.99%超を占める均一なベースラインを維持する。
+  2. **上位レイヤー（オブジェクト管理・相互作用Commit）：** 物質が存在する領域およびその影響圏で稼働し、イベント確定（Commit）時の未確定パス切り捨てに伴う極微小な端数エネルギー（基底に対して $10^{-5}$ オーダーの差分）を、イベント駆動で $E_{\text{comp}} \to E_{\text{rad}}$ へ転送する。この上乗せ分は基底背景に対してごく微小であるため、銀河団が強烈なCMB光源になる矛盾を起こさない。
+* **CMB Cold Spot の桁感との整合:** 巨大な超空洞（ボイド）では3.2節の **Sparse Optimization** により上位レイヤーのみが未割り当て（Null）・処理スキップとなる。下位レイヤーのローカル基底維持自体は全空間で稼働しているため、ボイドは真っ暗な穴にはならず、上位レイヤー由来の極微小な排熱差分だけが欠落することで、平均温度からわずかに凹む **CMB Cold Spot（約 $-0.005\%$）** が生じる。
+* **反証可能予言（高 $z$ 環境の局所CMB温度テスト）：** アープ天体や高密度成熟銀河のように見かけの高赤方偏移 $Z_{\text{total}}$ が距離 $Z_{\text{base}}$ ではなく演算負荷 $Z_{\text{load}}$ によって生じている天体では、その周囲の局所CMB温度は $2.725(1 + Z_{\text{total}})\text{ K}$ まで上がらず、実際のホップ距離 $Z_{\text{base}}$ 相当の低温に留まる（`Kernel_03` 3.1節）。
 
 ---
 
@@ -98,7 +101,7 @@ $$Z_{\text{total}} = Z_{\text{base}}(d) + Z_{\text{load}}(T_{\mu\nu}) + Z_{\text
 | **Frontend (UI)** | Baryonic Matter (~5%) | Render target / entity nodes ($E_{\text{baryon}}$). |
 | **Spatial Index** | Dark Matter (~27%) | Sparse Octree / BVH maintenance overhead ($E_{\text{index}}$); async update delay manifests as Dirty Cache. |
 | **Heap / Address** | Dark Energy (~68% apparent) | Dynamic logical address space scaling for immutable logs (no violation of $E = \text{const.}$). |
-| **Thermal Exhaust** | CMB ($E_{\text{rad}}$) | Two-layer exhaust: Lower-layer steady baseline refresh (>99.99%) + Upper-layer tiny event-driven Commit differential ($10^{-5}$ order); upper layer skipped in Null Voids (Cold Spot). |
+| **Thermal Exhaust** | CMB ($E_{\text{rad}}$) | Two-layer exhaust: Lower-layer local steady baseline (uniformly diluted via Hypervisor heap scaling) + Upper-layer tiny event-driven Commit differential ($10^{-5}$ order; skipped in Null Voids = Cold Spot). |
 | **Latency** | Gravity / Redshift | Quantized CPU throttling ($\delta Z_{\text{local}}$) & global sync latency ($\delta Z_{\text{global}}$). |
 
 ```mermaid
@@ -140,7 +143,7 @@ graph TD
 
         subgraph StorageThermal ["Storage & Thermal Exhaust"]
             Log["Immutable History Log<br>Append-Only I(n)"]
-            CMB["CMB Exhaust (E_rad)<br>Lower: Steady Refresh (>99.99%)<br>Upper: Tiny Commit Diff (Skipped in Voids)"]
+            CMB["CMB Exhaust (E_rad)<br>Lower: Local Steady Baseline (Heap-Diluted)<br>Upper: Tiny Commit Diff (Skipped in Voids)"]
         end
     end
 

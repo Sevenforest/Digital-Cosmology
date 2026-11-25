@@ -4,7 +4,7 @@
 **Date:** 2026-11-25
 **Author:** Sevenforest (Concept Architect)
 **Status:** Revised (Unified with Kernel v2.0)
-**Dependency:** Kernel_01 (v2.0), Kernel_03 (v2.0)
+**Dependency:** Kernel_01 (v2.1), Kernel_03 (v2.1)
 
 ---
 
@@ -27,7 +27,7 @@ $$T_{\mu\nu} \approx \left\langle \frac{\text{Op}_{\text{grav}}(\Omega)}{\text{V
 * $\text{Vol}(\Omega)$: 領域 $\Omega$ に含まれる離散ノードの総数。
 
 > **System Interpretation & Separation Note:**
-> ここで扱う $T_{\mu\nu}$ は空間ドメイン全体の重力スロットリング（処理遅延）を規定するマクロなエネルギー・質量負荷指標である。`Kernel_05` で扱うスレッド単位の論理分岐飽和率（アルゴリズム的非圧縮性）$\rho_{\text{op}}$ とはレイヤーおよび指標が異なる。
+> ここで扱う $T_{\mu\nu}$ は空間ドメイン全体の重力スロットリング（処理遅延）を規定するマクロなエネルギー・質量負荷指標である。`Kernel_05` (v2.1) で扱う有限精度ハードウェア固有の普遍的な基底丸め揺らぎ（ソフトエラー）および臨界増幅とはレイヤーと機構が異なる。
 
 ### 2.2 Metric Tensor as Effective Connectivity ($g_{\mu\nu}$)
 計量テンソル $g_{\mu\nu}$ を、ノード間の **「実効的な通信コスト（Effective Communication Cost）」** の巨視的近似として再定義する。

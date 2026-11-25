@@ -145,12 +145,12 @@ The simulation code in this repository includes a **Sensitivity Analysis** modul
 ### 4. Historical Convergence (Two-Tier Quantization)
 The discrete clock architecture operates on two tiers (`Kernel_04` v2.0). While the local throttling step $\delta Z_{\text{local}}$ generates the gravitational redshift Dead Zone, the global block-synchronization step $\delta Z_{\text{global}} \approx 2.4 \times 10^{-4}$ structurally aligns with the **"Redshift Quantization (~72 km/s periodicity)"** reported by William Tifft et al.
 
-### 5. Two-Layer Exhaust Architecture for CMB & the "Cold Spot"
+### 5. Two-Layer CMB Exhaust Architecture, the "Cold Spot" & High-$z$ Temperature Test
 Under Energy Shell Closure, $E = (E_{\text{baryon}} + E_{\text{index}}) + E_{\text{rad}} = \text{const.}$, the Cosmic Microwave Background (CMB) is maintained across two layers (`Kernel_01` / `Vol.2` / `Vol.3`):
-* **Lower Layer (Steady Baseline Refresh):** Operates uniformly across the sky regardless of mass, continuously re-shuffling existing energy within $E_{\text{rad}}$ without creating new energy—preserving the >99.99% uniform 2.725 K blackbody baseline.
+* **Lower Layer (Local Steady Baseline & Uniform Dilution):** Every spatial domain operates under identical kernel rules to locally maintain its share of $E_{\text{rad}}$ without superluminal shuffling, tracking uniform volume dilution ($\rho_{\text{rad}} \propto R^{-3}$) driven by Hypervisor-level heap scaling—preserving the >99.99% uniform 2.725 K baseline.
 * **Upper Layer (Tiny Event-Driven Differential):** Active only in matter-occupied regions and their spheres of influence, expelling minute truncation residuals ($10^{-5}$ order relative to the baseline) from $E_{\text{comp}}$ to $E_{\text{rad}}$ during irreversible Commits.
 
-In matter-free supervoids, **Sparse Optimization** sets only the upper layer to unallocated (`Null`) and skips it. Because the lower-layer refresh remains intact, voids do not become pitch-black holes; instead, missing the tiny upper-layer contribution yields a subtle temperature dip (**CMB Cold Spot**, ~$-0.005\%$) consistent with observations.
+In matter-free supervoids, **Sparse Optimization** sets only the upper layer to unallocated (`Null`) and skips it. Because the lower-layer baseline remains intact, voids do not become pitch-black holes; instead, missing the tiny upper-layer contribution yields a subtle temperature dip (**CMB Cold Spot**, ~$-0.005\%$) consistent with observations. Furthermore, the framework yields a sharp falsifiable prediction: objects whose high apparent redshift $Z_{\text{total}}$ is dominated by operational load $Z_{\text{load}}$ rather than distance $Z_{\text{base}}$ will exhibit a local CMB temperature significantly below $2.725(1 + Z_{\text{total}})\text{ K}$ (`Kernel_03` §3.1).
 
 ## 💌 Message from the Architect
 
